@@ -1,0 +1,106 @@
+/* Hero Section */
+#hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack content vertically */
+  text-align: center;
+  height: 100vh;
+}
+
+/* Hero Text */
+.hero-text {
+  font-family: 'Graphik', sans-serif; /* Default font is Graphik */
+  font-weight: 700;
+  text-transform: uppercase; /* Force uppercase */
+  color: #fff; /* White color */
+  margin: 0;
+  line-height: 1.0; /* Adjusted line-height to fit the image dimensions */
+  font-size: clamp(2.5rem, 6.5vw, 6.5rem); /* Adjusted font size */
+  letter-spacing: -0.05em; /* Matches the -5% shown in the Graphik settings */
+  word-spacing: 0.2em; /* Increase space between words */
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Kelsi Container */
+.hero .kelsi-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible; /* Ensure the container does not clip its children */
+}
+
+/* Kelsi Text */
+.hero .kelsi-text {
+  font-family: 'Kelsi-Regular', sans-serif; /* Apply Kelsi to specific characters */
+  display: inline-block;
+  color: #fff;
+  margin: 0 -0.15em;
+  line-height: 1.0; /* Ensure it aligns with the rest */
+  font-size: clamp(3rem, 7vw, 6.5rem); /* Adjusted font size */
+  letter-spacing: 0; /* 0% letter spacing for Kelsi */
+  z-index: 2; /* Ensure it is above the Graphik text */
+}
+
+/* Kelsi */
+.hero .kelsi {
+  font-family: 'Kelsi-fill', sans-serif; /* Apply Kelsi to specific characters */
+  display: inline-block;
+  color: #054D95; /* White color */
+  margin: 0 -0.15em;
+  line-height: 1.0; /* Ensure it aligns with the rest */
+  font-size: clamp(3rem, 7vw, 6.5rem); /* Adjusted font size */
+  letter-spacing: 0; /* 0% letter spacing for Kelsi */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure it is below the .kelsi-text */
+}
+
+/* Line SVG */
+.line-svg {
+  position: absolute;
+  bottom: -0.5rem; /* Adjust as needed to position the SVG closer to the text */
+  left: -100%; /* Extend the line beyond the container */
+  right: -50%; /* Extend the line beyond the container */
+  width: auto;
+  max-width: none; /* Remove the max-width constraint */
+  height: auto;
+}
+
+/* Gen Line */
+.gen-line {
+  bottom: -1rem; /* Adjust to position underneath "GEN" */
+}
+
+/* Tech Line */
+.tech-line {
+  bottom: -1rem; /* Adjust to position underneath "TECH" */
+}
+
+/* Shared styles for SVGs */
+.svg-fixed {
+  position: fixed;
+  z-index: 20; /* Ensures visibility over other elements */
+  width: clamp(55px, 8vw, 80px); /* Increased maximum size to align with proportions */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+  .svg-fixed {
+    width: clamp(40px, 4vw, 60px); /* Adjust size for desktop */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+  .hero-text, .hero .kelsi-text, .hero .kelsi {
+    font-size: clamp(3rem, 7vw, 6rem); /* Adjusted font size for mobile */
+  }
+}
+
+/* Ensure no overlapping with scrolling content */
+#hero.hero {
+  position: relative;
+}

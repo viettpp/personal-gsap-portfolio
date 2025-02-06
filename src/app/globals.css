@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #054D95;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #054D95;
     --foreground: #ededed;
   }
 }
@@ -32,6 +32,16 @@ body {
 
 /* Local Fonts */
 @font-face {
-  font-family: 'Kelsi';
+  font-family: 'Kelsi-fill';
   src: url('/fonts/Kelsi-fill.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/Graphik-Super.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kelsi-regular';
+  src: url('/fonts/Kelsi-Regular.otf') format('opentype');
 }
