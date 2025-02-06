@@ -60,22 +60,25 @@
 /* Line SVG */
 .line-svg {
   position: absolute;
-  bottom: -0.5rem; /* Adjust as needed to position the SVG closer to the text */
-  left: -100%; /* Extend the line beyond the container */
-  right: -50%; /* Extend the line beyond the container */
-  width: auto;
-  max-width: none; /* Remove the max-width constraint */
+  bottom: -0.5rem;       /* Adjust as needed */
+  left: -100%;           /* Extend the line beyond the container */
+  right: -50%;           /* Extend the line beyond the container */
+  max-width: none;       /* Keep no max-width constraint */
   height: auto;
 }
 
 /* Gen Line */
 .gen-line {
-  bottom: -1rem; /* Adjust to position underneath "GEN" */
+  bottom: -0.5rem; /* Adjust to position underneath 'GEN' */
+   /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
+   width: clamp(8rem, 40vw, 13rem);
 }
 
 /* Tech Line */
 .tech-line {
-  bottom: -1rem; /* Adjust to position underneath "TECH" */
+  bottom: -0.5rem; /* Adjust to position underneath 'TECH' */
+    /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
+    width: clamp(8rem, 40vw, 18rem);
 }
 
 /* Shared styles for SVGs */
@@ -96,7 +99,15 @@
 /* Media query for mobile screens */
 @media (max-width: 767px) {
   .hero-text, .hero .kelsi-text, .hero .kelsi {
-    font-size: clamp(3rem, 7vw, 6rem); /* Adjusted font size for mobile */
+    font-size: clamp(2rem, 7vw, 5rem); /* Adjusted font size for mobile */
+  }
+  .gen-line {
+    width: clamp(6rem, 40vw, 6rem); /* Adjusted width for mobile */
+    bottom: -0.2rem; /* Adjust to position underneath 'TECH' */
+  }
+  .tech-line {
+    width: clamp(6rem, 40vw, 8rem); /* Adjusted width for mobile */
+    bottom: -0.2rem; /* Adjust to position underneath 'TECH' */
   }
 }
 
