@@ -1,13 +1,38 @@
 "use client"; // Required for using hooks or React state in the App Router
 
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
+import gsap from "gsap";
 import "@/styles/Hero.css"; // Keep a single CSS file for all hero styles
 
 const Hero: FC = () => {
+  const curtainRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    gsap.to(curtainRefs.current, {
+      y: "-100%",
+      duration: 1.2,
+      ease: "power4.inOut",
+      stagger: 0.15,
+    });
+  }, []);
+
   return (
-    <section id="hero" className="relative bg-[#054D95] h-screen hero">
+    <section id="hero" className="relative bg-[#054D95] h-screen hero overflow-hidden">
+      {/* Curtains */}
+      <div className="hero-curtains">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            ref={(el) => {
+              if (el) curtainRefs.current[i] = el;
+            }}
+            className="hero-curtain"
+          />
+        ))}
+      </div>
+
       {/* Hero Text */}
-      <h1 className="hero-text text-white text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+      <h1 className="hero-text text-white text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight relative">
         INSPIRING <br /> THE NEXT{" "}
         <span className="kelsi-container">
           <span className="kelsi-text">G</span>
@@ -29,7 +54,7 @@ const Hero: FC = () => {
         src="/svgs/leftTopVector.svg"
         alt="Top Left Corner"
         className="svg-fixed top-0 left-0"
-        style={{ padding: "20px" }} // Example padding
+        style={{ padding: "20px" }}
       />
       <img
         src="/svgs/leftBottomVector.svg"
