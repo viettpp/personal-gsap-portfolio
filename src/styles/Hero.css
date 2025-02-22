@@ -7,19 +7,18 @@
   flex-direction: column; /* Stack content vertically */
   text-align: center;
   height: 100vh;
+  padding-top: 1rem; /* Adjusted padding for header */
 }
 
 /* Hero Text */
 .hero-text {
-  font-family: 'Graphik', sans-serif; /* Default font is Graphik */
-  font-weight: 700;
+  font-family: 'Bueno', sans-serif; /* Default font is Bueno */
+  font-weight: 100;
   text-transform: uppercase; /* Force uppercase */
   color: #fff; /* White color */
   margin: 0;
-  line-height: 1.0; /* Adjusted line-height to fit the image dimensions */
-  font-size: clamp(2.5rem, 6.5vw, 6.5rem); /* Adjusted font size */
-  letter-spacing: -0.05em; /* Matches the -5% shown in the Graphik settings */
-  word-spacing: 0.2em; /* Increase space between words */
+  line-height: 0.5; /* Adjusted line-height to fit the image dimensions */
+  font-size: clamp(4rem, 8vw, 9.375rem); /* Adjusted font size */
   position: relative; /* Ensure proper positioning */
 }
 
@@ -39,7 +38,7 @@
   line-height: 1.0; /* Ensure it aligns with the rest */
   font-size: clamp(3rem, 7vw, 6.5rem); /* Adjusted font size */
   letter-spacing: 0; /* 0% letter spacing for Kelsi */
-  z-index: 2; /* Ensure it is above the Graphik text */
+  z-index: 2; /* Ensure it is above the Bueno text */
 }
 
 /* Kelsi */
@@ -99,7 +98,7 @@
 /* Media query for mobile screens */
 @media (max-width: 767px) {
   .hero-text, .hero .kelsi-text, .hero .kelsi {
-    font-size: clamp(2rem, 7vw, 5rem); /* Adjusted font size for mobile */
+    font-size: clamp(3rem, 8vw, 5rem); /* Adjusted font size for mobile */
   }
   .gen-line {
     width: clamp(6rem, 40vw, 6rem); /* Adjusted width for mobile */

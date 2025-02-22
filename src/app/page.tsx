@@ -1,5 +1,6 @@
 import Header from "@/components/Header"; // Import the Header component
 import Hero from "@/components/Hero"; // Import the Hero component
+import About from "@/components/About"; // Import the About component
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Header />
       <main>
         <Hero />
+        <About />
       </main>
     </>
   );
