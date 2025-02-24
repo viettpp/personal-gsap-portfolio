@@ -8,12 +8,29 @@ const Hero: FC = () => {
   const curtainRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    gsap.to(curtainRefs.current, {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Dispatch custom event when Hero's animation is finished
+        window.dispatchEvent(new Event("heroAnimationFinished"));
+      },
+    });
+
+    tl.to(curtainRefs.current, {
       y: "-100%",
       duration: 1.2,
       ease: "power4.inOut",
       stagger: 0.15,
-    });
+    })
+    .to(".gen-line", {
+      clipPath: "inset(0 0% 0 0)", // Reveal from left to right
+      duration: 0.5,
+      ease: "power2.out",
+    })
+    .to(".tech-line", {
+      clipPath: "inset(0 0% 0 0)", // Reveal from left to right
+      duration: 0.5,
+      ease: "power2.out",}
+      );
   }, []);
 
   return (

@@ -86,6 +86,8 @@
   bottom: -0.5rem; /* Adjust to position underneath 'GEN' */
    /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
    width: clamp(8rem, 40vw, 13rem);
+   clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+   will-change: clip-path; /* Optimize animation performance */
 }
 
 /* Tech Line */
@@ -93,6 +95,8 @@
   bottom: -0.5rem; /* Adjust to position underneath 'TECH' */
     /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
     width: clamp(8rem, 40vw, 18rem);
+    clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+    will-change: clip-path; /* Optimize animation performance */
 }
 
 /* Shared styles for SVGs */

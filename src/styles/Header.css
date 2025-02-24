@@ -1,6 +1,6 @@
-/* Sticky Logo Container */
+/* Logo Container */
 .logo-container {
-    position: fixed; /* Make it sticky */
+    position: absolute; /* You can also change to 'sticky' */
     top: 0; /* Stick to the top */
     background-color: #054D95; /* Matches the background */
     z-index: 10; /* Keeps it above other elements */
