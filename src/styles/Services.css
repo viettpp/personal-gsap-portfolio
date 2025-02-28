@@ -1,0 +1,125 @@
+/* Container Styles */
+.core-services {
+    display: flex;
+    justify-content: center; /* Center horizontally on desktop */
+    align-items: center;     /* Center vertically on desktop */
+    padding: 2rem clamp(2rem, 8vw, 10rem);
+    color: #fff;
+    height: 100vh;
+}
+
+/* Left Section */
+.core-services__left {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+/* Core Services Title */  
+.title {
+    font-family: 'Bueno', sans-serif;
+    font-size: clamp(4rem, 8vw, 9.375rem);
+    text-transform: uppercase;
+    margin: 0 0 2rem;
+    color: #fff;
+    line-height: 0.9;
+    position: relative;
+}
+
+/* For the letter 'e' in Services, wrap it in a span with this class */
+.title .kelsi {
+    font-family: 'Kelsi-Regular', sans-serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    position: relative;
+    left: -0.10em; 
+    margin-right: -0.20em;
+}
+
+.description {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.resume-link {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 0.8rem;
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Right Section */
+.core-services__right {
+    flex: 1;
+}
+
+/* ---------- TABLE STYLES ---------- */
+.services-table {
+    width: 100%;
+    border-collapse: collapse; /* ensures cells touch cleanly */
+    table-layout: fixed;       /* consistent column widths */
+    font-family: 'PP Neue Montreal', sans-serif;
+  }
+  
+  /* Remove default row border */
+  .services-table tr {
+    border-bottom: none;
+  }
+  
+  /* Remove any TD border you had previously */
+  .services-table td {
+    border-bottom: none;
+  }
+  
+  /* Apply border only to columns 2 & 3 in every row but the last */
+  .services-table tr:not(:last-of-type) td.number-cell,
+  .services-table tr:not(:last-of-type) td.item-cell {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+/* Category cell, e.g. [ME], [DEV], spans multiple rows */
+.category-cell {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  padding: 1rem;
+  vertical-align: top;  /* ensures category lines up at the top */
+  width: 60px;          /* adjust as needed */
+}
+
+/* The numbering cell, top-right alignment */
+.number-cell {
+    color: #fff;
+    width: 40px; /* tweak as desired */
+    text-align: left;
+    vertical-align: top;  /* positions the number at the top of the cell */
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+/* The main item text, e.g. 'Presentations' */
+.item-cell {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* ---------- RESPONSIVE STYLES ---------- */
+@media (max-width: 768px) {
+    .core-services {
+        flex-direction: column;
+        padding: 4rem 2rem;
+        height: auto;         /* Remove fixed height on mobile */
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .core-services__left {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* Table can shrink on mobile, or you can override to display block, etc. */
+    .services-table {
+        width: 100%;
+    }
+}

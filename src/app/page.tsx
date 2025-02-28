@@ -1,6 +1,8 @@
 import Header from "@/components/Header"; // Import the Header component
 import Hero from "@/components/Hero"; // Import the Hero component
 import About from "@/components/About"; // Import the About component
+import Services from "@/components/Services"; // Import the Services component
+
 
 const Home = () => {
   return (
@@ -10,6 +12,7 @@ const Home = () => {
       <main>
         <Hero />
         <About />
+        <Services />
       </main>
     </>
   );
