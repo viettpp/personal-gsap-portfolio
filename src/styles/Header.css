@@ -13,20 +13,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
 }
   
 /* Kelsi-fill Font for "V" */
   .kelsi {
     font-family: 'Kelsi-fill', sans-serif;
-    font-size: 4rem;
     color: #fff;
 }
   
 /* Redacted Script Font for "iet" */
   .redacted {
     font-family: 'Redacted Script', cursive;
-    font-size: 3rem;
     color: #fff;
-    margin-left: 0.1rem;
 }
