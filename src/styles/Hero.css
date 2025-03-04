@@ -31,8 +31,7 @@
   text-transform: uppercase; /* Force uppercase */
   color: #fff; /* White color */
   margin: 0;
-  line-height: 0.5; /* Adjusted line-height to fit the image dimensions */
-  font-size: clamp(4rem, 8vw, 9.375rem); /* Adjusted font size */
+  /*line-height: 0.5; /* Adjusted line-height to fit the image dimensions */
   position: relative; /* Ensure proper positioning */
   z-index: 10; /* Ensure text appears above the hero section */
 }
@@ -50,8 +49,7 @@
   display: inline-block;
   color: #fff;
   margin: 0 -0.15em;
-  line-height: 1.0; /* Ensure it aligns with the rest */
-  font-size: clamp(3rem, 7vw, 6.5rem); /* Adjusted font size */
+  /*line-height: 1.0; /* Ensure it aligns with the rest */
   letter-spacing: 0; /* 0% letter spacing for Kelsi */
   z-index: 2; /* Ensure it is above the Bueno text */
 }
@@ -62,8 +60,7 @@
   display: inline-block;
   color: #054D95; /* White color */
   margin: 0 -0.15em;
-  line-height: 1.0; /* Ensure it aligns with the rest */
-  font-size: clamp(3rem, 7vw, 6.5rem); /* Adjusted font size */
+  /*line-height: 1.0; /* Ensure it aligns with the rest */
   letter-spacing: 0; /* 0% letter spacing for Kelsi */
   position: absolute;
   top: 0;
@@ -74,59 +71,28 @@
 /* Line SVG */
 .line-svg {
   position: absolute;
-  bottom: -0.5rem;       /* Adjust as needed */
   left: -100%;           /* Extend the line beyond the container */
-  right: -50%;           /* Extend the line beyond the container */
   max-width: none;       /* Keep no max-width constraint */
   height: auto;
 }
 
 /* Gen Line */
 .gen-line {
-  bottom: -0.5rem; /* Adjust to position underneath 'GEN' */
-   /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
-   width: clamp(8rem, 40vw, 13rem);
-   clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
-   will-change: clip-path; /* Optimize animation performance */
+  clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+  will-change: clip-path; /* Optimize animation performance */
 }
 
 /* Tech Line */
 .tech-line {
-  bottom: -0.5rem; /* Adjust to position underneath 'TECH' */
-    /* --- CHANGED from 'width: auto;' to a clamp for responsiveness --- */
-    width: clamp(8rem, 40vw, 18rem);
-    clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
-    will-change: clip-path; /* Optimize animation performance */
+  clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+  will-change: clip-path; /* Optimize animation performance */
 }
 
 /* Shared styles for SVGs */
 .svg-fixed {
   position: fixed;
   z-index: 20; /* Ensures visibility over other elements */
-  width: clamp(55px, 8vw, 80px); /* Increased maximum size to align with proportions */
   height: auto; /* Maintain aspect ratio */
-}
-
-/* Media query for larger screens */
-@media (min-width: 1024px) {
-  .svg-fixed {
-    width: clamp(40px, 4vw, 60px); /* Adjust size for desktop */
-  }
-}
-
-/* Media query for mobile screens */
-@media (max-width: 767px) {
-  .hero-text, .hero .kelsi-text, .hero .kelsi {
-    font-size: clamp(3rem, 8vw, 5rem); /* Adjusted font size for mobile */
-  }
-  .gen-line {
-    width: clamp(6rem, 40vw, 6rem); /* Adjusted width for mobile */
-    bottom: -0.2rem; /* Adjust to position underneath 'TECH' */
-  }
-  .tech-line {
-    width: clamp(6rem, 40vw, 8rem); /* Adjusted width for mobile */
-    bottom: -0.2rem; /* Adjust to position underneath 'TECH' */
-  }
 }
 
 /* Ensure no overlapping with scrolling content */

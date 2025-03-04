@@ -25,8 +25,8 @@ const Header: FC = () => {
   return (
     <header className="logo-container">
       <div className="logo pt-4">
-        <span className="kelsi text-5xl sm:text-6xl 2xl:text-8xl">V</span>
-        <span className="redacted text-4xl sm:text-5xl 2xl:text-7xl">iet</span>
+        <span className="kelsi text-5xl sm:text-6xl 2xl:text-7xl">V</span>
+        <span className="redacted text-4xl sm:text-5xl 2xl:text-6xl">iet</span>
       </div>
     </header>
   );

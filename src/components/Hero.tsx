@@ -49,58 +49,93 @@ const Hero: FC = () => {
       </div>
 
       {/* Hero Text */}
-      <h1 className="hero-text text-white text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight relative">
+      <h1 className="hero-text text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.8] 2xl:leading-[0.9]">
+        {/* Desktop layout */}
+        <span className="hidden sm:block">
         INSPIRING <br /> THE NEXT{" "}
-        <span className="kelsi-container">
+        <span className="kelsi-container md:text-[3.5rem] lg:text-[4rem] xl:text-[5.5rem] 2xl:text-[7rem]">
           <span className="kelsi-text">G</span>
           <span className="kelsi">G</span>
-          <img src="/svgs/genLine.svg" alt="Gen Line" className="line-svg gen-line" />
+          <img 
+            src="/svgs/genLine.svg" 
+            alt="Gen Line" 
+            className="line-svg gen-line bottom-[-0.1rem] md:w-[7rem] lg:w-[8rem] xl:w-[11rem] 2xl:w-[14rem]" 
+          />
         </span>
         EN OF
         <br />
-        <span className="kelsi-container">
+        <span className="kelsi-container md:text-[3.5rem] lg:text-[4rem] xl:text-[5.5rem] 2xl:text-[7rem]">
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
-          <img src="/svgs/techLine.svg" alt="Tech Line" className="line-svg tech-line" />
+          <img 
+            src="/svgs/techLine.svg" 
+            alt="Tech Line" 
+            className="line-svg tech-line bottom-[-0.1rem] md:w-[9rem] lg:w-[11rem] xl:w-[14rem] 2xl:w-[19rem]" 
+          />
         </span>
         ECH LEADERS
+        </span>
+        {/* Mobile layout */}
+        <span className="block sm:hidden">
+        INSPIRING <br /> THE NEXT<br />
+        <span className="kelsi-container text-[3.5rem]">
+          <span className="kelsi-text">G</span>
+          <span className="kelsi">G</span>
+          <img 
+            src="/svgs/genLine.svg" 
+            alt="Gen Line" 
+            className="line-svg gen-line bottom-[0.1rem] w-[7rem]" 
+          />
+        </span>
+        EN OF<br />
+        <span className="kelsi-container text-[3.5rem]">
+          <span className="kelsi-text">T</span>
+          <span className="kelsi">T</span>
+          <img 
+            src="/svgs/techLine.svg" 
+            alt="Tech Line" 
+            className="line-svg tech-line bottom-[0.1rem] w-[9rem]" 
+          />
+        </span>
+        ECH <br /> LEADERS
+        </span>
       </h1>
 
       {/* Fixed SVGs */}
       <img
         src="/svgs/leftTopVector.svg"
         alt="Top Left Corner"
-        className="svg-fixed top-0 left-0"
+        className="svg-fixed top-0 left-0 w-[55px] sm:w-[60px]"
         style={{ padding: "20px" }}
       />
       <img
         src="/svgs/leftBottomVector.svg"
         alt="Bottom Left Corner"
-        className="svg-fixed bottom-0 left-0"
+        className="svg-fixed bottom-0 left-0 w-[55px] sm:w-[60px]"
         style={{ padding: "20px" }}
       />
       <img
         src="/svgs/rightTopVector.svg"
         alt="Top Right Corner"
-        className="svg-fixed top-0 right-0"
+        className="svg-fixed top-0 right-0 w-[55px] sm:w-[60px]"
         style={{ padding: "20px" }}
       />
       <img
         src="/svgs/rightBottomVector.svg"
         alt="Bottom Right Corner"
-        className="svg-fixed bottom-0 right-0"
+        className="svg-fixed bottom-0 right-0 w-[55px] sm:w-[60px]"
         style={{ padding: "20px" }}
       />
       <img
         src="/svgs/middleVector.svg"
         alt="Middle Left"
-        className="svg-fixed top-1/2 left-0"
+        className="svg-fixed top-1/2 left-0 w-[55px] sm:w-[60px]"
         style={{ transform: "translateY(-50%)", padding: "20px" }}
       />
       <img
         src="/svgs/middleVector.svg"
         alt="Middle Right"
-        className="svg-fixed top-1/2 right-0"
+        className="svg-fixed top-1/2 right-0 w-[55px] sm:w-[60px]"
         style={{ transform: "translateY(-50%)", padding: "20px" }}
       />
     </section>
