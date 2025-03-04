@@ -87,8 +87,8 @@ const Hero: FC = () => {
             className="line-svg gen-line bottom-[0.1rem] w-[7rem]" 
           />
         </span>
-        EN OF<br />
-        <span className="kelsi-container text-[3.5rem]">
+        EN OF
+        <span className="kelsi-container text-[3.5rem] ml-[1.5rem]"> {/* Add margin ml to align with the desktop layout */}
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
           <img 
