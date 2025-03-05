@@ -49,28 +49,28 @@ const Hero: FC = () => {
       </div>
 
       {/* Hero Text */}
-      <h1 className="hero-text text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.8] 2xl:leading-[0.9]">
+      <h1 className="hero-text text-[3.75rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[12rem] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.8] 2xl:leading-[0.9]">
         {/* Desktop layout */}
         <span className="hidden sm:block">
         INSPIRING <br /> THE NEXT{" "}
-        <span className="kelsi-container md:text-[3.5rem] lg:text-[4rem] xl:text-[5.5rem] 2xl:text-[7rem]">
+        <span className="kelsi-container md:text-[4.5rem] lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[11.5rem]">
           <span className="kelsi-text">G</span>
           <span className="kelsi">G</span>
           <img 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
-            className="line-svg gen-line bottom-[-0.1rem] md:w-[7rem] lg:w-[8rem] xl:w-[11rem] 2xl:w-[14rem]" 
+            className="line-svg gen-line bottom-[-0.1rem] md:w-[8.5rem] lg:w-[10rem] xl:w-[14rem] 2xl:w-[20rem]" 
           />
         </span>
         EN OF
         <br />
-        <span className="kelsi-container md:text-[3.5rem] lg:text-[4rem] xl:text-[5.5rem] 2xl:text-[7rem]">
+        <span className="kelsi-container md:text-[4.5rem] lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[11.5rem]">
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
           <img 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
-            className="line-svg tech-line bottom-[-0.1rem] md:w-[9rem] lg:w-[11rem] xl:w-[14rem] 2xl:w-[19rem]" 
+            className="line-svg tech-line bottom-[-0.1rem] md:w-[11rem] lg:w-[14rem] xl:w-[18rem] 2xl:w-[27rem]" 
           />
         </span>
         ECH LEADERS
@@ -84,7 +84,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
-            className="line-svg gen-line bottom-[0.1rem] w-[7rem]" 
+            className="line-svg gen-line bottom-[0.1rem] w-[6.5rem]" 
           />
         </span>
         EN OF
@@ -94,7 +94,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
-            className="line-svg tech-line bottom-[0.1rem] w-[9rem]" 
+            className="line-svg tech-line bottom-[0.1rem] w-[8.5rem]" 
           />
         </span>
         ECH <br /> LEADERS
