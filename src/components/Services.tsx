@@ -22,42 +22,42 @@ const CoreServices: React.FC = () => {
       <div className="core-services__right">
         <table className="services-table">
           <tbody>
-            {/* [ME] Category */}
+            {/* [TECH] Category */}
             <tr>
-              <td rowSpan={4} className="category-cell">[ME]</td>
+              <td rowSpan={3} className="category-cell">[TECH]</td>
               <td className="number-cell">01</td>
-              <td className="item-cell">Presentations</td>
+              <td className="item-cell">Tech Advisory & Strategy</td>
             </tr>
             <tr>
               <td className="number-cell">02</td>
-              <td className="item-cell">Podcast</td>
+              <td className="item-cell">AI/ML Prototypes</td>
             </tr>
             <tr>
               <td className="number-cell">03</td>
-              <td className="item-cell">Facilitation</td>
-            </tr>
-            <tr>
-              <td className="number-cell">04</td>
-              <td className="item-cell">Mentorship</td>
+              <td className="item-cell">Full-Stack Development</td>
             </tr>
 
-            {/* [DEV] Category */}
+            {/* [BRAND] Category */}
             <tr>
-              <td rowSpan={4} className="category-cell">[DEV]</td>
-              <td className="number-cell">05</td>
-              <td className="item-cell">Web Development</td>
+              <td rowSpan={2} className="category-cell">[BRAND]</td>
+              <td className="number-cell">04</td>
+              <td className="item-cell">Brand Identity & Design</td>
             </tr>
             <tr>
+              <td className="number-cell">05</td>
+              <td className="item-cell">Generative Video Production</td>
+            </tr>
+
+
+            {/* [GROW] Category */}
+            <tr>
+              <td rowSpan={2} className="category-cell">[GROW]</td>
               <td className="number-cell">06</td>
-              <td className="item-cell">App Development</td>
+              <td className="item-cell">Public Speaking Engagement</td>
             </tr>
             <tr>
               <td className="number-cell">07</td>
-              <td className="item-cell">Machine Learning</td>
-            </tr>
-            <tr>
-              <td className="number-cell">08</td>
-              <td className="item-cell">Generative AI</td>
+              <td className="item-cell">Startup Mentorship</td>
             </tr>
           </tbody>
         </table>
