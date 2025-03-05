@@ -37,8 +37,8 @@ const About: FC = () => {
   }, []);
 
   return (
-    <section className="about-section">
-      <p className="about-text">
+    <section className="about-section max-w-[20rem] md:max-w-[40rem] lg:max-w-[50rem] xl:max-w-[70rem] 2xl:max-w-[125rem] mx-auto">
+      <p className="about-text text-[1.8rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[6rem] indent-[4rem] md:indent-[8rem] lg:indent-[10rem] xl:indent-[12rem] 2xl:indent-[24rem]">
         Viet is a digital alchemist and seasoned tech entrepreneur, uniquely
         situated at the nexus of business, technology, and creativity. With a
         strong consultancy background and a flair for experimentation, he

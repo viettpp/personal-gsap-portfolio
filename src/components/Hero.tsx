@@ -49,7 +49,7 @@ const Hero: FC = () => {
       </div>
 
       {/* Hero Text */}
-      <h1 className="hero-text text-[3.75rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[12rem] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.8] 2xl:leading-[0.9]">
+      <h1 className="hero-text text-[3.75rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[12rem] leading-[0.9] md:leading-[0.85] lg:leading-[0.85] xl:leading-[0.8] 2xl:leading-[0.8]">
         {/* Desktop layout */}
         <span className="hidden sm:block">
         INSPIRING <br /> THE NEXT{" "}
@@ -84,7 +84,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
-            className="line-svg gen-line bottom-[0.1rem] w-[6.5rem]" 
+            className="line-svg gen-line bottom-[0.1rem] w-[6.25rem]" 
           />
         </span>
         EN OF
@@ -94,7 +94,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
-            className="line-svg tech-line bottom-[0.1rem] w-[8.5rem]" 
+            className="line-svg tech-line bottom-[0.1rem] w-[8.25rem]" 
           />
         </span>
         ECH <br /> LEADERS
@@ -105,38 +105,34 @@ const Hero: FC = () => {
       <img
         src="/svgs/leftTopVector.svg"
         alt="Top Left Corner"
-        className="svg-fixed top-0 left-0 w-[55px] sm:w-[60px]"
-        style={{ padding: "20px" }}
+        className="svg-fixed top-2 left-2 w-[15px] sm:w-[20px]"
       />
       <img
         src="/svgs/leftBottomVector.svg"
         alt="Bottom Left Corner"
-        className="svg-fixed bottom-0 left-0 w-[55px] sm:w-[60px]"
-        style={{ padding: "20px" }}
+        className="svg-fixed bottom-2 left-2 w-[15px] sm:w-[20px]"
       />
       <img
         src="/svgs/rightTopVector.svg"
         alt="Top Right Corner"
-        className="svg-fixed top-0 right-0 w-[55px] sm:w-[60px]"
-        style={{ padding: "20px" }}
+        className="svg-fixed top-2 right-2 w-[15px] sm:w-[20px]"
       />
       <img
         src="/svgs/rightBottomVector.svg"
         alt="Bottom Right Corner"
-        className="svg-fixed bottom-0 right-0 w-[55px] sm:w-[60px]"
-        style={{ padding: "20px" }}
+        className="svg-fixed bottom-2 right-2 w-[15px] sm:w-[20px]"
       />
       <img
         src="/svgs/middleVector.svg"
         alt="Middle Left"
-        className="svg-fixed top-1/2 left-0 w-[55px] sm:w-[60px]"
-        style={{ transform: "translateY(-50%)", padding: "20px" }}
+        className="svg-fixed top-1/2 left-2 w-[15px] sm:w-[20px]"
+        style={{ transform: "translateY(-50%)"}}
       />
       <img
         src="/svgs/middleVector.svg"
         alt="Middle Right"
-        className="svg-fixed top-1/2 right-0 w-[55px] sm:w-[60px]"
-        style={{ transform: "translateY(-50%)", padding: "20px" }}
+        className="svg-fixed top-1/2 right-2 w-[15px] sm:w-[20px]"
+        style={{ transform: "translateY(-50%)"}}
       />
     </section>
   );

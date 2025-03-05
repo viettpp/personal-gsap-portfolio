@@ -1,18 +1,14 @@
 /* styles/About.css */
-  .about-section {
+.about-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
 }
   
-  .about-text {
+.about-text {
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: clamp(1.5rem, 4vw, 6rem); /* Responsive font size */
-    text-align: left; /* Align text to the left */
+    text-align: left;
     color: white;
-    max-width: clamp(325px, 80%, 1100px); /* Responsive max-width */
     line-height: 1.2;
-    text-indent: clamp(2rem, 8vw, 10rem); /* Tab space at the beginning */
 }
