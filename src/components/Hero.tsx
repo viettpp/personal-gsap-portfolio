@@ -49,28 +49,28 @@ const Hero: FC = () => {
       </div>
 
       {/* Hero Text */}
-      <h1 className="hero-text text-[3.75rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] 2xl:text-[12rem] leading-[0.9] md:leading-[0.85] lg:leading-[0.85] xl:leading-[0.8] 2xl:leading-[0.8]">
+      <h1 className="hero-text text-[3.75rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[8rem] 2xl:text-[11rem] leading-[0.9] md:leading-[0.85] lg:leading-[0.85] xl:leading-[0.8] 2xl:leading-[0.8]">
         {/* Desktop layout */}
         <span className="hidden sm:block">
         INSPIRING <br /> THE NEXT{" "}
-        <span className="kelsi-container md:text-[4.5rem] lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[11.5rem]">
+        <span className="kelsi-container md:text-[5rem] lg:text-[7rem] xl:text-[7.5rem] 2xl:text-[10.5rem]">
           <span className="kelsi-text">G</span>
           <span className="kelsi">G</span>
           <img 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
-            className="line-svg gen-line bottom-[-0.1rem] md:w-[8.5rem] lg:w-[10rem] xl:w-[14rem] 2xl:w-[20rem]" 
+            className="line-svg gen-line bottom-[-0.1rem] md:w-[9rem] lg:w-[13rem] xl:w-[14rem] 2xl:w-[18rem]" 
           />
         </span>
         EN OF
         <br />
-        <span className="kelsi-container md:text-[4.5rem] lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[11.5rem]">
+        <span className="kelsi-container md:text-[5rem] lg:text-[7rem] xl:text-[7.5rem] 2xl:text-[10.5rem]">
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
           <img 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
-            className="line-svg tech-line bottom-[-0.1rem] md:w-[11rem] lg:w-[14rem] xl:w-[18rem] 2xl:w-[27rem]" 
+            className="line-svg tech-line bottom-[-0.1rem] md:w-[12rem] lg:w-[16rem] xl:w-[18rem] 2xl:w-[24rem]" 
           />
         </span>
         ECH LEADERS
