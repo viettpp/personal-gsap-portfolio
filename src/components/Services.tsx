@@ -17,6 +17,7 @@ const CoreServices: React.FC = () => {
 
       // Create hover animation
       const hoverAnimation = gsap.to(arrow, {
+        paused: true,
         rotation: 0,
         duration: 0.4,
         ease: "expo.out",
