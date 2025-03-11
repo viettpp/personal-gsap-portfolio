@@ -1,7 +1,44 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import '@/styles/Services.css';
 
 const CoreServices: React.FC = () => {
+  const arrowRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const arrow = arrowRef.current;
+    const link = arrow?.parentElement;
+
+    if (arrow && link) {
+      // Initial rotation
+      gsap.set(arrow, { rotation: -45 });
+
+      // Create hover animation
+      const hoverAnimation = gsap.to(arrow, {
+        rotation: 0,
+        duration: 0.4,
+        ease: "expo.out",
+        stagger: 0.05
+      });
+
+      // Define event handler functions
+      const handleMouseEnter = () => hoverAnimation.play();
+      const handleMouseLeave = () => hoverAnimation.reverse();
+
+      // Add event listeners
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+
+      // Cleanup
+      return () => {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    }
+  }, []);
+
   return (
     <div className="core-services min-h-screen max-w-[20rem] md:max-w-[42rem] lg:max-w-[52rem] xl:max-w-[70rem] 2xl:max-w-[125rem] mx-auto">
       <div className="flex flex-col md:flex-row w-full gap-[3rem] lg:gap-[4rem] xl:gap-[15rem] 2xl:gap-[25rem]">
@@ -17,9 +54,20 @@ const CoreServices: React.FC = () => {
             href="https://standardresume.co/r/QGXQF0QMK16iYfDR7mKqU" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] underline"
+            className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] flex items-center gap-1"
           >
-            + WORK RESUME
+            <svg 
+              ref={arrowRef}
+              width="5" 
+              height="6" 
+              viewBox="0 0 5 6" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-[0.5rem] xl:h-[0.563rem] 2xl:h-[0.75rem] w-[0.5rem] xl:w-[0.563rem] 2xl:w-[0.75rem] cursor-pointer"
+            >
+              <path d="M3.80469 2.6875L2.05469 0.9375L2.5 0.5L5 3L2.5 5.5L2.05469 5.0625L3.80469 3.3125L0 3.3125L0 2.6875L3.80469 2.6875Z" fill="currentColor"/>
+            </svg>
+            WORK RESUME
           </a>
         </div>
 

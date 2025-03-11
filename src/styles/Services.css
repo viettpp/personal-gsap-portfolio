@@ -26,8 +26,12 @@
 }
 
 /* Text styles */
-.description, .resume-link, .services-table {
+.description, .services-table {
     font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.resume-link {
+    font-family: 'PP Neue Montreal Medium', sans-serif;
 }
 
 /* Right Section */
@@ -44,11 +48,13 @@
 }
 
 .category-cell {
+    font-family: 'PP Neue Montreal Medium', sans-serif;
     color: rgba(255, 255, 255, 0.5);
     vertical-align: top;
 }
 
 .number-cell {
+    font-family: 'PP Neue Montreal Medium', sans-serif;
     color: #fff;
     text-align: left;
     vertical-align: top;

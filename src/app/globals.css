@@ -22,6 +22,11 @@ body {
 
 /* Local Fonts */
 @font-face {
+  font-family: 'Kelsi-regular';
+  src: url('/fonts/Kelsi-Regular.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'Kelsi-fill';
   src: url('/fonts/Kelsi-fill.otf') format('opentype');
 }
@@ -32,11 +37,11 @@ body {
 }
 
 @font-face {
-  font-family: 'Kelsi-regular';
-  src: url('/fonts/Kelsi-Regular.otf') format('opentype');
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal';
-  src: url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
+  font-family: 'PP Neue Montreal Medium';
+  src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
 }
