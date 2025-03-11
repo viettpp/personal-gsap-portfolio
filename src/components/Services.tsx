@@ -13,7 +13,12 @@ const CoreServices: React.FC = () => {
             Responsibly innovative, this is what Viet can do for you without
             getting himself fired from his day job.
           </p>
-          <a href="#" className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] underline">
+          <a 
+            href="https://standardresume.co/r/QGXQF0QMK16iYfDR7mKqU" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] underline"
+          >
             + WORK RESUME
           </a>
         </div>
