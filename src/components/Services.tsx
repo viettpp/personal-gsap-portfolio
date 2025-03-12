@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import '@/styles/Services.css';
+import SlotMachineText from "@/components/SlotMachineText";
 
 const CoreServices: React.FC = () => {
   const arrowRef = useRef<SVGSVGElement>(null);
@@ -68,7 +69,7 @@ const CoreServices: React.FC = () => {
             >
               <path d="M3.80469 2.6875L2.05469 0.9375L2.5 0.5L5 3L2.5 5.5L2.05469 5.0625L3.80469 3.3125L0 3.3125L0 2.6875L3.80469 2.6875Z" fill="currentColor"/>
             </svg>
-            WORK RESUME
+            <SlotMachineText text="WORK RESUME" />
           </a>
         </div>
 
