@@ -91,7 +91,7 @@ const CoreServices: React.FC = () => {
           <h1 className="title text-[3.75rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[8rem] 2xl:text-[11rem] leading-[0.9] mb-4">
             Core<br />S<span className="kelsi text-[3.5rem] md:text-[5rem] lg:text-[7rem] xl:text-[7.5rem] 2xl:text-[10.5rem] relative -left-[0.10em] -mr-[0.20em]">e</span>rvices
           </h1>
-          <p className="description text-[1.063rem] md:text-[1rem] lg:text-[1.063rem] xl:text-[1.125rem] 2xl:text-[1.563rem] leading-relaxed mb-1 mr-10 md:mr-[5rem] lg:mr-[10rem] 2xl:mr-[25rem]">
+          <p className="description text-[1.063rem] md:text-[1rem] lg:text-[1.063rem] xl:text-[1.125rem] 2xl:text-[1.563rem] leading-relaxed mb-2 2xl:mb-4 mr-10 md:mr-[5rem] lg:mr-[10rem] 2xl:mr-[25rem]">
             Responsibly innovative, this is what Viet can do for you without
             getting himself fired from his day job.
           </p>

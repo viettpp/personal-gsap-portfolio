@@ -54,6 +54,7 @@
 }
 
 .number-cell {
+    position: relative;
     font-family: 'PP Neue Montreal Medium', sans-serif;
     color: #fff;
     text-align: left;
@@ -62,10 +63,6 @@
 
 .item-cell {
     color: #fff;
-    position: relative;
-}
-
-.number-cell {
     position: relative;
 }
 
