@@ -59,7 +59,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
-            className="line-svg gen-line bottom-[-0.1rem] md:w-[9rem] lg:w-[13rem] xl:w-[14rem] 2xl:w-[18rem]" 
+            className="line-svg gen-line bottom-[-0.1rem] w-[6.25rem] md:w-[9rem] lg:w-[13rem] xl:w-[14rem] 2xl:w-[18rem]" 
           />
         </span>
         EN OF
@@ -70,7 +70,7 @@ const Hero: FC = () => {
           <img 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
-            className="line-svg tech-line bottom-[-0.1rem] md:w-[12rem] lg:w-[16rem] xl:w-[18rem] 2xl:w-[24rem]" 
+            className="line-svg tech-line bottom-[-0.1rem] w-[8.25rem] md:w-[12rem] lg:w-[16rem] xl:w-[18rem] 2xl:w-[24rem]" 
           />
         </span>
         ECH LEADERS
