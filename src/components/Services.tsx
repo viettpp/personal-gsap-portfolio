@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '@/styles/Services.css';
 import SlotMachineText from "@/components/SlotMachineText";
 
@@ -41,6 +42,48 @@ const CoreServices: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const rows = gsap.utils.toArray('.services-table tr');
+
+    rows.forEach((row) => {
+      const numWrapper = (row as HTMLElement).querySelector('.number-cell .text-wrapper');
+      const itemWrapper = (row as HTMLElement).querySelector('.item-cell .text-wrapper');
+      const topLine = (row as HTMLElement).querySelector('.top-line');
+
+      if (!numWrapper || !itemWrapper || !topLine) return;
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: row as HTMLElement,
+          start: 'top 80%',
+          scrub: false, // no scrubbing; animate once triggered
+        },
+      })
+        // 1) Slide num wrapper up from y=100% to y=0
+        .fromTo(
+          numWrapper,
+          { y: '100%' },
+          { y: '0%', duration: 0.2, ease: 'power2.inOut' }
+        )
+        // 2) Slide item wrapper up from y=100% to y=0, with small delay
+        .fromTo(
+          itemWrapper,
+          { y: '100%' },
+          { y: '0%', duration: 0.2, ease: 'power2.inOut' },
+          '+=0.1'
+        )
+        // 3) Expand the line from width=0 to full width, with small delay
+        .fromTo(
+          topLine,
+          { width: 0 },
+          { width: 'calc(100% + 20px)', duration: 0.2, ease: 'power2.out' },
+          '+=0.1'
+        );
+    });
+  }, []);
+
   return (
     <div className="core-services min-h-screen max-w-[20rem] md:max-w-[42rem] lg:max-w-[52rem] xl:max-w-[70rem] 2xl:max-w-[125rem] mx-auto">
       <div className="flex flex-col md:flex-row w-full gap-[3rem] lg:gap-[4rem] xl:gap-[15rem] 2xl:gap-[25rem]">
@@ -53,13 +96,13 @@ const CoreServices: React.FC = () => {
             getting himself fired from his day job.
           </p>
           <a 
-            href="https://standardresume.co/r/QGXQF0QMK16iYfDR7mKqU" 
+            href="https://standardresume.co/r/QGXQF0QMK16iYfDR7mKqU" /* Replace with your resume link */
             target="_blank" 
             rel="noopener noreferrer" 
             className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] flex items-center gap-1"
           >
             <svg 
-              ref={arrowRef}
+              ref={arrowRef} /* Ref for the arrow SVG */
               width="5" 
               height="6" 
               viewBox="0 0 5 6" 
@@ -80,38 +123,73 @@ const CoreServices: React.FC = () => {
               {/* [TECH] Category */}
               <tr>
                 <td rowSpan={3} className="category-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] w-[60px] xl:w-[100px] 2xl:w-[150px]">[TECH]</td>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 w-[20px]" data-category="[TECH]">01</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-1 pb-4">Tech Strategy</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 w-[20px]" data-category="[TECH]">
+                  <div className="text-wrapper">01</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-1 pb-4">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">Tech Strategy</div>
+                </td>
               </tr>
               <tr>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">02</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">AI/ML Prototypes</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">
+                  <div className="text-wrapper">02</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">AI/ML Prototypes</div>
+                </td>
               </tr>
               <tr>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">03</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">Full-Stack</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">
+                  <div className="text-wrapper">03</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">Full-Stack</div>
+                </td>
               </tr>
 
               {/* [BRAND] Category */}
               <tr>
                 <td rowSpan={2} className="category-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pt-4">[BRAND]</td>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4" data-category="[BRAND]">04</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">Brand Design</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4" data-category="[BRAND]">
+                  <div className="text-wrapper">04</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">Brand Design</div>
+                </td>
               </tr>
               <tr>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">05</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">AI Video Production</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">
+                  <div className="text-wrapper">05</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">AI Video Production</div>
+                </td>
               </tr>
 
               {/* [GROW] Category */}
               <tr>
                 <td rowSpan={2} className="category-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pt-4">[GROW]</td>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4" data-category="[GROW]">06</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">Public Speaking</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4" data-category="[GROW]">
+                  <div className="text-wrapper">06</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">Public Speaking</div>
+                </td>
               </tr>
               <tr>
-                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">07</td>
-                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">Startup Mentorship</td>
+                <td className="number-cell text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] pl-0 pt-4">
+                  <div className="text-wrapper">07</div>
+                </td>
+                <td className="item-cell text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] pl-4 xl:pl-8 pt-5 pb-4 2xl:pt-7 2xl:pb-6">
+                  <span className="top-line"></span>
+                  <div className="text-wrapper">Startup Mentorship</div>
+                </td>
               </tr>
             </tbody>
           </table>

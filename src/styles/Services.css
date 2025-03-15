@@ -62,10 +62,17 @@
 
 .item-cell {
     color: #fff;
+    position: relative;
 }
 
-/* Border styles for table cells */
-.services-table tr td.number-cell,
-.services-table tr td.item-cell {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+.number-cell {
+    position: relative;
+}
+
+.top-line {
+    position: absolute;
+    bottom: 0; /* or a small offset if you want the line slightly above the bottom */
+    left: -20px; /* shift left to start near the num cell's left edge */
+    width: calc(100% + 20px); /* extend the line to the right edge of item cell */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
