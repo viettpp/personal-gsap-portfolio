@@ -3,6 +3,7 @@
 import { FC, useEffect, useRef } from "react";
 import gsap from "gsap";
 import "@/styles/Hero.css"; // Keep a single CSS file for all hero styles
+import Image from 'next/image';
 
 const Hero: FC = () => {
   const curtainRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -56,10 +57,12 @@ const Hero: FC = () => {
         <span className="kelsi-container md:text-[5rem] lg:text-[7rem] xl:text-[7.5rem] 2xl:text-[10.5rem]">
           <span className="kelsi-text">G</span>
           <span className="kelsi">G</span>
-          <img 
+          <Image 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
             className="line-svg gen-line bottom-[-0.1rem] w-[6.25rem] md:w-[9rem] lg:w-[13rem] xl:w-[14rem] 2xl:w-[18rem]" 
+            width={625}
+            height={18}
           />
         </span>
         EN OF
@@ -67,10 +70,12 @@ const Hero: FC = () => {
         <span className="kelsi-container md:text-[5rem] lg:text-[7rem] xl:text-[7.5rem] 2xl:text-[10.5rem]">
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
-          <img 
+          <Image 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
             className="line-svg tech-line bottom-[-0.1rem] w-[8.25rem] md:w-[12rem] lg:w-[16rem] xl:w-[18rem] 2xl:w-[24rem]" 
+            width={825}
+            height={24}
           />
         </span>
         ECH LEADERS
@@ -81,20 +86,24 @@ const Hero: FC = () => {
         <span className="kelsi-container text-[3.5rem]">
           <span className="kelsi-text">G</span>
           <span className="kelsi">G</span>
-          <img 
+          <Image 
             src="/svgs/genLine.svg" 
             alt="Gen Line" 
             className="line-svg gen-line bottom-[0.1rem] w-[6.25rem]" 
+            width={625}
+            height={18}
           />
         </span>
         EN OF
         <span className="kelsi-container text-[3.5rem] ml-[1.5rem]"> {/* Add margin ml to align with the desktop layout */}
           <span className="kelsi-text">T</span>
           <span className="kelsi">T</span>
-          <img 
+          <Image 
             src="/svgs/techLine.svg" 
             alt="Tech Line" 
             className="line-svg tech-line bottom-[0.1rem] w-[8.25rem]" 
+            width={825}
+            height={24}
           />
         </span>
         ECH <br /> LEADERS
@@ -102,37 +111,49 @@ const Hero: FC = () => {
       </h1>
 
       {/* Fixed SVGs */}
-      <img
+      <Image
         src="/svgs/leftTopVector.svg"
         alt="Top Left Corner"
         className="svg-fixed top-2 left-2 w-[15px] sm:w-[20px]"
+        width={15}
+        height={20}
       />
-      <img
+      <Image
         src="/svgs/leftBottomVector.svg"
         alt="Bottom Left Corner"
         className="svg-fixed bottom-2 left-2 w-[15px] sm:w-[20px]"
+        width={15}
+        height={20}
       />
-      <img
+      <Image
         src="/svgs/rightTopVector.svg"
         alt="Top Right Corner"
         className="svg-fixed top-2 right-2 w-[15px] sm:w-[20px]"
+        width={15}
+        height={20}
       />
-      <img
+      <Image
         src="/svgs/rightBottomVector.svg"
         alt="Bottom Right Corner"
         className="svg-fixed bottom-2 right-2 w-[15px] sm:w-[20px]"
+        width={15}
+        height={20}
       />
-      <img
+      <Image
         src="/svgs/middleVector.svg"
         alt="Middle Left"
         className="svg-fixed top-1/2 left-2 w-[15px] sm:w-[20px]"
         style={{ transform: "translateY(-50%)"}}
+        width={15}
+        height={20}
       />
-      <img
+      <Image
         src="/svgs/middleVector.svg"
         alt="Middle Right"
         className="svg-fixed top-1/2 right-2 w-[15px] sm:w-[20px]"
         style={{ transform: "translateY(-50%)"}}
+        width={15}
+        height={20}
       />
     </section>
   );
