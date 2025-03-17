@@ -63,8 +63,11 @@
 
 .number-cell .text-wrapper,
 .item-cell .text-wrapper {
-    transform: translateY(100%);
-    opacity: 0;
+    /* Use percentage values for clip-path for smoother animation */
+    clip-path: inset(0% 0% 100% 0%);
+    overflow: hidden; /* ensure content is clipped */
+    transform: translateY(20px); /* shift down initially */
+    will-change: clip-path, transform;
 }
 
 .item-cell {

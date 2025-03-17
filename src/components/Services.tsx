@@ -17,11 +17,11 @@ const CoreServices: React.FC = () => {
       // Initial rotation
       gsap.set(arrow, { rotation: -45 });
 
-      // Create hover animation
+      // Create hover animation with slower (smoother) duration
       const hoverAnimation = gsap.to(arrow, {
         paused: true,
         rotation: 0,
-        duration: 0.4,
+        duration: 0.6, // increased duration for smoother animation
         ease: "expo.out",
         stagger: 0.05
       });
@@ -44,42 +44,38 @@ const CoreServices: React.FC = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const rows = gsap.utils.toArray('.services-table tr');
-
     rows.forEach((row) => {
       const numWrapper = (row as HTMLElement).querySelector('.number-cell .text-wrapper');
       const itemWrapper = (row as HTMLElement).querySelector('.item-cell .text-wrapper');
       const topLine = (row as HTMLElement).querySelector('.top-line');
-
       if (!numWrapper || !itemWrapper || !topLine) return;
-
       gsap.timeline({
         scrollTrigger: {
           trigger: row as HTMLElement,
           start: 'top 80%',
-          scrub: false, // no scrubbing; animate once triggered
+          scrub: false,
         },
       })
-        // 1) Slide num wrapper up from y=100% to y=0 and fade in
+        // Animate num wrapper to slide up and unclip text
         .fromTo(
           numWrapper,
-          { y: '100%', opacity: 0 },
-          { y: '0%', opacity: 1, duration: 0.2, ease: 'power2.inOut' }
+          { clipPath: 'inset(0% 0% 100% 0%)', y: 20 },
+          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'power2.inOut' }
         )
-        // 2) Slide item wrapper up from y=100% to y=0, with small delay and fade in
+        // Animate item wrapper similarly with a slight delay
         .fromTo(
           itemWrapper,
-          { y: '100%', opacity: 0 },
-          { y: '0%', opacity: 1, duration: 0.2, ease: 'power2.inOut' },
-          '+=0.1'
+          { clipPath: 'inset(0% 0% 100% 0%)', y: 20 },
+          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'power2.inOut' },
+          '+=0.01'
         )
-        // 3) Expand the line from width=0 to full width, with small delay
+        // Animate top line as before
         .fromTo(
           topLine,
           { width: 0 },
-          { width: 'calc(100% + 20px)', duration: 0.2, ease: 'power2.out' },
-          '+=0.1'
+          { width: 'calc(100% + 20px)', duration: 0.7, ease: 'power2.out' },
+          '+=0.01'
         );
     });
   }, []);
