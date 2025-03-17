@@ -61,6 +61,12 @@
     vertical-align: top;
 }
 
+.number-cell .text-wrapper,
+.item-cell .text-wrapper {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
 .item-cell {
     color: #fff;
     position: relative;

@@ -61,17 +61,17 @@ const CoreServices: React.FC = () => {
           scrub: false, // no scrubbing; animate once triggered
         },
       })
-        // 1) Slide num wrapper up from y=100% to y=0
+        // 1) Slide num wrapper up from y=100% to y=0 and fade in
         .fromTo(
           numWrapper,
-          { y: '100%' },
-          { y: '0%', duration: 0.2, ease: 'power2.inOut' }
+          { y: '100%', opacity: 0 },
+          { y: '0%', opacity: 1, duration: 0.2, ease: 'power2.inOut' }
         )
-        // 2) Slide item wrapper up from y=100% to y=0, with small delay
+        // 2) Slide item wrapper up from y=100% to y=0, with small delay and fade in
         .fromTo(
           itemWrapper,
-          { y: '100%' },
-          { y: '0%', duration: 0.2, ease: 'power2.inOut' },
+          { y: '100%', opacity: 0 },
+          { y: '0%', opacity: 1, duration: 0.2, ease: 'power2.inOut' },
           '+=0.1'
         )
         // 3) Expand the line from width=0 to full width, with small delay
