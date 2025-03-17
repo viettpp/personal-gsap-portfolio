@@ -61,20 +61,20 @@ const CoreServices: React.FC = () => {
         .fromTo(
           numWrapper,
           { clipPath: 'inset(0% 0% 100% 0%)', y: 20 },
-          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'power2.inOut' }
+          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'expo.out' }
         )
         // Animate item wrapper similarly with a slight delay
         .fromTo(
           itemWrapper,
           { clipPath: 'inset(0% 0% 100% 0%)', y: 20 },
-          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'power2.inOut' },
+          { clipPath: 'inset(0% 0% 0% 0%)', y: 0, duration: 0.7, ease: 'expo.out' },
           '+=0.01'
         )
         // Animate top line as before
         .fromTo(
           topLine,
           { width: 0 },
-          { width: 'calc(100% + 20px)', duration: 0.7, ease: 'power2.out' },
+          { width: 'calc(100% + 20px)', duration: 0.7, ease: 'expo.out' },
           '+=0.01'
         );
     });
