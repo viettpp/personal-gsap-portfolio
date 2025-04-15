@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { gsap, ScrollTrigger } from "@/lib/animations";
+import { gsap } from "@/lib/animations";
 import '@/styles/Services.css';
 import { SlotMachineText } from "@/components/animations";
 
