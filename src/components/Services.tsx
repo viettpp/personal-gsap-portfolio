@@ -95,20 +95,9 @@ const CoreServices: React.FC = () => {
             href="https://standardresume.co/r/QGXQF0QMK16iYfDR7mKqU" /* Replace with your resume link */
             target="_blank" 
             rel="noopener noreferrer" 
-            className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] flex items-center gap-1"
+            className="resume-link text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]"
           >
-            <svg 
-              ref={arrowRef} /* Ref for the arrow SVG */
-              width="5" 
-              height="6" 
-              viewBox="0 0 5 6" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-[0.5rem] xl:h-[0.563rem] 2xl:h-[0.75rem] w-[0.5rem] xl:w-[0.563rem] 2xl:w-[0.75rem] cursor-pointer"
-            >
-              <path d="M3.80469 2.6875L2.05469 0.9375L2.5 0.5L5 3L2.5 5.5L2.05469 5.0625L3.80469 3.3125L0 3.3125L0 2.6875L3.80469 2.6875Z" fill="currentColor"/>
-            </svg>
-            <SlotMachineText text="WORK RESUME" />
+            <SlotMachineText text="WORK RESUME" showArrow={true} />
           </a>
         </div>
 
