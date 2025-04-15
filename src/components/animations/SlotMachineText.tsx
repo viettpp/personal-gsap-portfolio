@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import gsap from 'gsap';
+import { gsap } from "@/lib/animations";
 
 interface SlotMachineTextProps {
   text: string
@@ -140,4 +140,4 @@ export default function SlotMachineText({
       </div>
     </div>
   )
-}
+} 

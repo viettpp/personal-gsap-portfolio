@@ -1,49 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect } from 'react';
+import { gsap, ScrollTrigger } from "@/lib/animations";
 import '@/styles/Services.css';
-import SlotMachineText from "@/components/SlotMachineText";
+import { SlotMachineText } from "@/components/animations";
 
 const CoreServices: React.FC = () => {
-  const arrowRef = useRef<SVGSVGElement>(null);
-
   useEffect(() => {
-    const arrow = arrowRef.current;
-    const link = arrow?.parentElement;
-
-    if (arrow && link) {
-      // Initial rotation
-      gsap.set(arrow, { rotation: -45 });
-
-      // Create hover animation with slower (smoother) duration
-      const hoverAnimation = gsap.to(arrow, {
-        paused: true,
-        rotation: 0,
-        duration: 0.6, // increased duration for smoother animation
-        ease: "expo.out",
-        stagger: 0.05
-      });
-
-      // Define event handler functions
-      const handleMouseEnter = () => hoverAnimation.play();
-      const handleMouseLeave = () => hoverAnimation.reverse();
-
-      // Add event listeners
-      link.addEventListener('mouseenter', handleMouseEnter);
-      link.addEventListener('mouseleave', handleMouseLeave);
-
-      // Cleanup
-      return () => {
-        link.removeEventListener('mouseenter', handleMouseEnter);
-        link.removeEventListener('mouseleave', handleMouseLeave);
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const rows = gsap.utils.toArray('.services-table tr');
     rows.forEach((row) => {
       const numWrapper = (row as HTMLElement).querySelector('.number-cell .text-wrapper');

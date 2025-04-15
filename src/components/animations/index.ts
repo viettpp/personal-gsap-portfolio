@@ -1,0 +1,1 @@
+export { default as SlotMachineText } from './SlotMachineText'; 
