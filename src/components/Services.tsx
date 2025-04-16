@@ -65,7 +65,7 @@ const CoreServices: React.FC = () => {
         </div>
 
         {/* Right section */}
-        <div className="core-services__right pr-2">
+        <div className="core-services__right pr-2 pb-[5rem] md:pb-0">
           <table className="services-table w-full">
             <tbody>
               {/* [TECH] Category */}

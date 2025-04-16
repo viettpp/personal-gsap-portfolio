@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { gsap } from "@/lib/animations";
 
 interface SlotMachineTextProps {
@@ -22,6 +22,18 @@ export default function SlotMachineText({
   const containerRef = useRef<HTMLDivElement>(null)
   const arrowRef = useRef<SVGSVGElement>(null)
   const hoverAnimationRef = useRef<gsap.core.Tween | null>(null)
+  const [charWidths, setCharWidths] = useState<number[]>([]);
+  const measureRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  // Measure character widths after mount or text change
+  useEffect(() => {
+    if (!text) return;
+    const widths = text.split("").map((_, i) => {
+      const el = measureRefs.current[i];
+      return el ? el.offsetWidth : 0;
+    });
+    setCharWidths(widths);
+  }, [text]);
 
   useEffect(() => {
     if (!showArrow || !arrowRef.current) return;
@@ -92,14 +104,30 @@ export default function SlotMachineText({
         onMouseEnter={handleTextMouseEnter}
         onMouseLeave={handleTextMouseLeave}
         onClick={() => setIsTextHovering(!isTextHovering)}
+        data-text={text}
       >
+        {/* Hidden spans for measuring character widths */}
+        <span style={{ position: 'absolute', visibility: 'hidden', pointerEvents: 'none', height: 0, overflow: 'hidden', whiteSpace: 'pre', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit' }}>
+          {text.split("").map((char, i) => (
+            <span
+              key={i}
+              ref={el => { measureRefs.current[i] = el; }}
+              style={{ display: 'inline-block', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit' }}
+            >
+              {char === " " ? '\u00A0' : char}
+            </span>
+          ))}
+        </span>
         {text.split("").map((char, index) => (
           <div 
             key={index} 
             className="relative overflow-hidden"
             style={{ 
               height: "1.0em",
-              width: char === " " ? "0.3em" : index === 0 ? "1em" : "0.7em",
+              width: charWidths[index] ? `${charWidths[index]}px` : undefined,
+              minWidth: char === " " ? "0.3em" : undefined,
+              padding: "0 0.03em",
+              transition: 'width 0.2s',
             }}
           >
             {char === " " ? (

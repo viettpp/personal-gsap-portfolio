@@ -1,0 +1,109 @@
+.contact {
+  background-color: #021F3B;
+  color: #9BA5D4;
+  height: 592.56px;
+  overflow: hidden;
+}
+
+@media (min-width: 375px) {
+  .contact {
+    height: 588.39px;
+  }
+}
+
+@media (min-width: 425px) {
+  .contact {
+    height: 604.59px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    height: 537.73px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    height: 726.01px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact {
+    height: 767.38px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .contact {
+    height: 1046.09px;
+  }
+}
+
+.contact__inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.contact__connect {
+  color: #4656A5;
+  font-family: 'PP Neue Montreal Medium', sans-serif;
+}
+
+.contact__description {
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.contact__social-link {
+  font-family: 'PP Neue Montreal Medium', sans-serif;
+}
+
+.contact__marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.contact__marquee-content {
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.contact__marquee-text {
+  display: inline-block;
+  font-family: 'Bueno', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.contact__marquee-content a {
+  cursor: pointer;
+}
+
+.contact__marquee-content a:hover .contact__marquee-text,
+.contact__marquee-content a:hover .kelsi {
+  color: white;
+}
+
+.contact__marquee .kelsi {
+  color: #9BA5D4;
+  font-family: 'Kelsi-Regular', sans-serif;
+  display: inline-block;
+  position: relative;
+}
+
+.contact__footer-text {
+  font-family: 'PP Neue Montreal Medium', sans-serif;
+} 
