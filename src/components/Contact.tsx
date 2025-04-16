@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import { gsap } from "@/lib/animations";
 import '@/styles/Contact.css';
 import { SlotMachineText } from "@/components/animations";
 
@@ -62,10 +61,10 @@ const Contact: React.FC = () => {
               <div className="contact__marquee-content">
                 <a href="mailto:hello@viet.dk" className="block">
                   <span className="contact__marquee-text text-[4rem] md:text-[8rem] lg:text-[12.5rem] xl:text-[12.5rem] 2xl:text-[15rem]">
-                    LET'S TALK <span className="kelsi">X</span>&nbsp;
+                    LET&rsquo;S TALK <span className="kelsi">X</span>&nbsp;
                   </span>
                   <span className="contact__marquee-text text-[4rem] md:text-[8rem] lg:text-[12.5rem] xl:text-[12.5rem] 2xl:text-[15rem]">
-                    LET'S TALK <span className="kelsi">X</span>&nbsp;
+                    LET&rsquo;S TALK <span className="kelsi">X</span>&nbsp;
                   </span>
                 </a>
               </div>
