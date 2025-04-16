@@ -44,7 +44,7 @@ const CoreServices: React.FC = () => {
   }, []);
 
   return (
-    <div className="core-services min-h-screen max-w-[20rem] md:max-w-[42rem] lg:max-w-[52rem] xl:max-w-[70rem] 2xl:max-w-[125rem] mx-auto">
+    <div className="core-services min-h-screen max-w-[20rem] md:max-w-[42rem] lg:max-w-[52rem] xl:max-w-[70rem] 2xl:max-w-[125rem] py-[5rem] md:py-[8rem] lg:py-[10rem] xl:py-[12rem] 2xl:py-[15rem]  mx-auto">
       <div className="flex flex-col md:flex-row w-full gap-[3rem] lg:gap-[4rem] xl:gap-[15rem] 2xl:gap-[25rem]">
         <div className="core-services__left">
           <h1 className="title text-[3.75rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[8rem] 2xl:text-[11rem] leading-[0.9] mb-4">
