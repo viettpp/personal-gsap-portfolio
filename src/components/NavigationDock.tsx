@@ -1,9 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react"
-// Add GSAP import
+// Remove unused import
 import { gsap } from "@/lib/animations";
-import { SlotMachineText } from "@/components/animations";
 
 // Utility function for className merging
 const cn = (...classes: (string | boolean | undefined)[]) => {
@@ -152,14 +151,6 @@ export default function NavigationDock() {
 
   const handleDockMouseLeave = () => {
     setHoveredTab(null)
-  }
-
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab)
-    const section = document.getElementById(tab.toLowerCase())
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-    }
   }
 
   return (
