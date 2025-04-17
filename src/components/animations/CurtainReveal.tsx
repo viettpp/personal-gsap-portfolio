@@ -8,7 +8,7 @@ export default function CurtainReveal() {
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
-        window.dispatchEvent(new Event("heroAnimationFinished"));
+        window.dispatchEvent(new Event("curtainAnimationFinished"));
       },
     });
 

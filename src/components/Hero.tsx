@@ -7,24 +7,31 @@ import Image from 'next/image';
 
 const Hero: FC = () => {
   useEffect(() => {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        // Dispatch custom event when Hero's animation is finished
-        // Remove: window.dispatchEvent(new Event("heroAnimationFinished"));
-      },
-    });
+    const handleCurtainFinished = () => {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          // Dispatch custom event when Hero's animation is finished
+          window.dispatchEvent(new Event("heroAnimationFinished"));
+        },
+      });
 
-    // Start with line animation
-    tl.to(".gen-line", {
-      clipPath: "inset(0 0% 0 0)", // Reveal from left to right
-      duration: 0.5,
-      ease: "power2.out",
-    })
-    .to(".tech-line", {
-      clipPath: "inset(0 0% 0 0)", // Reveal from left to right
-      duration: 0.5,
-      ease: "power2.out",}
-      );
+      // Start with line animation
+      tl.to(".gen-line", {
+        clipPath: "inset(0 0% 0 0)", // Reveal from left to right
+        duration: 0.5,
+        ease: "power2.out",
+      })
+      .to(".tech-line", {
+        clipPath: "inset(0 0% 0 0)", // Reveal from left to right
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
+    window.addEventListener("curtainAnimationFinished", handleCurtainFinished);
+    return () => {
+      window.removeEventListener("curtainAnimationFinished", handleCurtainFinished);
+    };
   }, []);
 
   return (
