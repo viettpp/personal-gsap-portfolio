@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useLayoutEffect } from "react"
 // Add GSAP import
 import { gsap } from "@/lib/animations";
+import { SlotMachineText } from "@/components/animations";
 
 // Utility function for className merging
 const cn = (...classes: (string | boolean | undefined)[]) => {
@@ -10,6 +11,40 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
 }
 
 const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
+
+// Custom hook for slot machine animation for dock tabs (now animates both layers)
+function useDockSlotMachine(
+  frontRefs: React.RefObject<HTMLSpanElement[]>,
+  backRefs: React.RefObject<HTMLSpanElement[]>,
+  trigger: boolean,
+  text: string,
+  duration = 300, // Match SlotMachineText
+  staggerDelay = 50 // Match SlotMachineText
+) {
+  useLayoutEffect(() => {
+    if (!frontRefs.current || !backRefs.current) return;
+    const fronts = frontRefs.current;
+    const backs = backRefs.current;
+    fronts.forEach((front, i) => {
+      if (!front) return;
+      gsap.to(front, {
+        y: trigger ? "-100%" : "0%",
+        duration: duration / 1000,
+        delay: (trigger ? i : (text.length - i - 1)) * staggerDelay / 1000,
+        ease: "cubic-bezier(0.4, 0, 0.2, 1)", // Match SlotMachineText
+      });
+    });
+    backs.forEach((back, i) => {
+      if (!back) return;
+      gsap.to(back, {
+        y: trigger ? "0%" : "100%",
+        duration: duration / 1000,
+        delay: (trigger ? i : (text.length - i - 1)) * staggerDelay / 1000,
+        ease: "cubic-bezier(0.4, 0, 0.2, 1)", // Match SlotMachineText
+      });
+    });
+  }, [trigger, text, duration, staggerDelay, frontRefs, backRefs]);
+}
 
 export default function NavigationDock() {
   const [activeTab, setActiveTab] = useState("STORY")
@@ -19,6 +54,35 @@ export default function NavigationDock() {
   const highlightRef = useRef<HTMLDivElement>(null)
   const dockInnerRef = useRef<HTMLDivElement>(null)
   const dockRef = useRef<HTMLDivElement>(null) // Add ref for the dock
+
+  // Create refs for each tab's character layers
+  const frontRefsArr = useRef<(HTMLSpanElement | null)[][]>([]);
+  const backRefsArr = useRef<(HTMLSpanElement | null)[][]>([]);
+  const measureRefsArr = useRef<(HTMLSpanElement | null)[][]>([]);
+  const [charWidthsArr, setCharWidthsArr] = useState<number[][]>(
+    tabs.map(tab => Array(tab.length).fill(0))
+  );
+
+  // Measure character widths after mount or tab text change
+  useEffect(() => {
+    const newWidths = tabs.map((tab, i) =>
+      tab.split("").map((_, j) => {
+        const el = measureRefsArr.current[i]?.[j];
+        return el ? el.offsetWidth : 0;
+      })
+    );
+    setCharWidthsArr(newWidths);
+  }, [tabs.join("")]);
+
+  // Call the animation hook for each tab (always in the same order)
+  tabs.forEach((tab, i) => {
+    useDockSlotMachine(
+      { current: frontRefsArr.current[i]?.filter((el): el is HTMLSpanElement => el !== null) },
+      { current: backRefsArr.current[i]?.filter((el): el is HTMLSpanElement => el !== null) },
+      hoveredTab === tab,
+      tab
+    );
+  });
 
   const currentTab = hoveredTab || activeTab
 
@@ -115,27 +179,99 @@ export default function NavigationDock() {
         />
 
         <div className="relative z-10 flex items-center w-full h-full">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              ref={(el) => {
-                tabRefs.current[tab] = el
-              }}
-              className={cn(
-                "rounded-md font-medium transition-colors duration-200 flex-1 h-full",
-                "px-2 xl:px-[0.55rem] 2xl:px-[0.73rem]", // Padding for larger screens
-                "text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]", // Font size
-                "whitespace-nowrap",
-                "font-[PP Neue Montreal Medium]",
-                currentTab === tab ? "text-white" : "text-white/90",
-              )}
-              style={{ fontFamily: "'PP Neue Montreal Medium', sans-serif" }}
-              onClick={() => handleTabClick(tab)}
-              onMouseEnter={() => setHoveredTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
+          {tabs.map((tab, i) => {
+            const isActive = currentTab === tab;
+            // Prepare refs for this tab's characters
+            if (!frontRefsArr.current[i]) frontRefsArr.current[i] = [];
+            if (!backRefsArr.current[i]) backRefsArr.current[i] = [];
+            if (!measureRefsArr.current[i]) measureRefsArr.current[i] = [];
+            const chars = tab.split("");
+
+            return (
+              <button
+                key={tab}
+                ref={(el) => {
+                  tabRefs.current[tab] = el
+                }}
+                className={cn(
+                  "rounded-md font-medium transition-colors duration-200 flex-1",
+                  "w-full h-full", // Make button fill its flex space
+                  "px-2 xl:px-[0.55rem] 2xl:px-[0.73rem]",
+                  "text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]",
+                  "whitespace-nowrap",
+                  "font-[PP Neue Montreal Medium]",
+                  "flex items-center justify-center",
+                  isActive ? "text-white" : "text-white/90",
+                )}
+                style={{ fontFamily: "'PP Neue Montreal Medium', sans-serif" }}
+                onClick={() => handleTabClick(tab)}
+                onMouseEnter={() => setHoveredTab(tab)}
+                onMouseLeave={() => setHoveredTab(null)}
+              >
+                <span
+                  className="inline-flex relative h-[1em] overflow-hidden"
+                  style={{ pointerEvents: "none" }}
+                >
+                  {/* Hidden spans for measuring character widths */}
+                  <span style={{ position: 'absolute', visibility: 'hidden', pointerEvents: 'none', height: 0, overflow: 'hidden', whiteSpace: 'pre', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit' }}>
+                    {chars.map((char, j) => (
+                      <span
+                        key={j}
+                        ref={el => { measureRefsArr.current[i][j] = el; }}
+                        style={{ display: 'inline-block', fontFamily: 'inherit', fontWeight: 'inherit', fontSize: 'inherit' }}
+                      >
+                        {char === " " ? '\u00A0' : char}
+                      </span>
+                    ))}
+                  </span>
+                  {chars.map((char, j) => (
+                    <span
+                      key={j}
+                      className="relative inline-block"
+                      style={{
+                        height: "1em",
+                        width: charWidthsArr[i]?.[j] ? `${charWidthsArr[i][j]}px` : undefined,
+                        minWidth: char === " " ? "0.3em" : undefined,
+                        padding: "0 0.03em",
+                        transition: 'width 0.2s',
+                        display: "inline-block",
+                        verticalAlign: "top",
+                      }}
+                    >
+                      {/* Front layer */}
+                      <span
+                        ref={el => { frontRefsArr.current[i][j] = el; }}
+                        className="absolute inset-0 flex items-center justify-center"
+                        style={{
+                          display: "flex",
+                          width: "100%",
+                          height: "100%",
+                          willChange: "transform",
+                          transform: "translateY(0%)",
+                        }}
+                      >
+                        {char}
+                      </span>
+                      {/* Back layer */}
+                      <span
+                        ref={el => { backRefsArr.current[i][j] = el; }}
+                        className="absolute inset-0 flex items-center justify-center"
+                        style={{
+                          display: "flex",
+                          width: "100%",
+                          height: "100%",
+                          willChange: "transform",
+                          transform: "translateY(100%)",
+                        }}
+                      >
+                        {char}
+                      </span>
+                    </span>
+                  ))}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
