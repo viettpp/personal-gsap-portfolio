@@ -18,7 +18,7 @@ const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
 const links = [
   "https://story.viet.dk", // STORY link
   "https://chat.viet.dk",  // CHAT link
-  "https://book.viet.dk",  // BOOK link
+  "https://calendly.com/viettppham/60min",  // BOOK link
   "https://shop.viet.dk",  // SHOP link
   // Add more links as needed
   // Ensure the number of links matches the number of tabs
