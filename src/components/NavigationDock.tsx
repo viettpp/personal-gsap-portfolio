@@ -58,13 +58,13 @@ function useDockSlotMachine(
 }
 
 export default function NavigationDock() {
-  const [activeTab, setActiveTab] = useState("STORY")
+  const [activeTab] = useState("STORY") // Remove setActiveTab since it's unused
   const [hoveredTab, setHoveredTab] = useState<string | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const tabRefs = useRef<Record<string, HTMLAnchorElement | null>>({})
   const highlightRef = useRef<HTMLDivElement>(null)
   const dockInnerRef = useRef<HTMLDivElement>(null)
-  const dockRef = useRef<HTMLDivElement>(null) // Add ref for the dock
+  const dockRef = useRef<HTMLDivElement>(null)
 
   // Create refs for each tab's character layers
   const frontRefsArr = useRef<(HTMLSpanElement | null)[][]>([]);
@@ -73,6 +73,9 @@ export default function NavigationDock() {
   const [charWidthsArr, setCharWidthsArr] = useState<number[][]>(
     tabs.map(tab => Array(tab.length).fill(0))
   );
+
+  // Fix dependency warning
+  const tabsKey = tabs.join("");
 
   // Measure character widths after mount or tab text change
   useEffect(() => {
@@ -83,17 +86,34 @@ export default function NavigationDock() {
       })
     );
     setCharWidthsArr(newWidths);
-  }, [tabs.join("")]);
+  }, [tabsKey]);
 
   // Call the animation hook for each tab (always in the same order)
-  tabs.forEach((tab, i) => {
-    useDockSlotMachine(
-      { current: frontRefsArr.current[i]?.filter((el): el is HTMLSpanElement => el !== null) },
-      { current: backRefsArr.current[i]?.filter((el): el is HTMLSpanElement => el !== null) },
-      hoveredTab === tab,
-      tab
-    );
-  });
+  // DO NOT use a loop, call the hook directly for each tab
+  useDockSlotMachine(
+    { current: frontRefsArr.current[0]?.filter((el): el is HTMLSpanElement => el !== null) },
+    { current: backRefsArr.current[0]?.filter((el): el is HTMLSpanElement => el !== null) },
+    hoveredTab === tabs[0],
+    tabs[0]
+  );
+  useDockSlotMachine(
+    { current: frontRefsArr.current[1]?.filter((el): el is HTMLSpanElement => el !== null) },
+    { current: backRefsArr.current[1]?.filter((el): el is HTMLSpanElement => el !== null) },
+    hoveredTab === tabs[1],
+    tabs[1]
+  );
+  useDockSlotMachine(
+    { current: frontRefsArr.current[2]?.filter((el): el is HTMLSpanElement => el !== null) },
+    { current: backRefsArr.current[2]?.filter((el): el is HTMLSpanElement => el !== null) },
+    hoveredTab === tabs[2],
+    tabs[2]
+  );
+  useDockSlotMachine(
+    { current: frontRefsArr.current[3]?.filter((el): el is HTMLSpanElement => el !== null) },
+    { current: backRefsArr.current[3]?.filter((el): el is HTMLSpanElement => el !== null) },
+    hoveredTab === tabs[3],
+    tabs[3]
+  );
 
   const currentTab = hoveredTab || activeTab
 
