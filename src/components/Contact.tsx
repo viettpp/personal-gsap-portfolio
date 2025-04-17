@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
 
           {/* Bottom Section */}
           <div className="flex justify-between items-end px-[3rem] lg:px-[5rem] xl:px-[6rem] 2xl:px-[8rem]">
-            <span className="contact__footer-text text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]">[©2023]</span>
+            <span className="contact__footer-text text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]">[©2025]</span>
             <span className="contact__footer-text text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem] text-right">MADE BY VIET</span>
           </div>
         </div>

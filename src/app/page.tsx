@@ -1,13 +1,13 @@
-import Header from "@/components/Header"; // Import the Header component
-import Hero from "@/components/Hero"; // Import the Hero component
-import About from "@/components/About"; // Import the About component
-import Services from "@/components/Services"; // Import the Services component
-import Contact from "@/components/Contact"; // Import the Contact component
+import Header from "@/components/Header"
+import Hero from "@/components/Hero"
+import About from "@/components/About"
+import Services from "@/components/Services"
+import Contact from "@/components/Contact"
+import NavigationDock from "@/components/NavigationDock"
 
 const Home = () => {
   return (
     <>
-      {/* Header remains sticky at the top */}
       <Header />
       <main>
         <Hero />
@@ -15,8 +15,9 @@ const Home = () => {
         <Services />
         <Contact />
       </main>
+      <NavigationDock />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
