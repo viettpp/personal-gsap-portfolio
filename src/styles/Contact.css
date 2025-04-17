@@ -1,43 +1,43 @@
 .contact {
   background-color: #021F3B;
   color: #9BA5D4;
-  height: 592.56px;
+  height: 625px;
   overflow: hidden;
 }
 
 @media (min-width: 375px) {
   .contact {
-    height: 588.39px;
+    height: 600px;
   }
 }
 
 @media (min-width: 425px) {
   .contact {
-    height: 604.59px;
+    height: 605px;
   }
 }
 
 @media (min-width: 768px) {
   .contact {
-    height: 537.73px;
+    height: 550px;
   }
 }
 
 @media (min-width: 1024px) {
   .contact {
-    height: 726.01px;
+    height: 720px;
   }
 }
 
 @media (min-width: 1440px) {
   .contact {
-    height: 767.38px;
+    height: 765px;
   }
 }
 
 @media (min-width: 2560px) {
   .contact {
-    height: 1046.09px;
+    height: 935px;
   }
 }
 

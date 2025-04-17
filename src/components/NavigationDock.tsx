@@ -64,8 +64,8 @@ export default function NavigationDock() {
   return (
     <div
       className={cn(
-        "fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center rounded-md shadow-lg overflow-hidden z-[100]",
-        "backdrop-blur-md bg-white/20", // Frosted glass effect
+        "fixed bottom-[3rem] left-1/2 -translate-x-1/2 flex items-center justify-center rounded-md shadow-lg overflow-hidden z-[100]",
+        "backdrop-blur-md bg-white/20", // Frosted glass effect and bottom class to control space to the bottom of the screen
         "w-[80vw] max-w-[15rem] xl:max-w-[16.35rem] 2xl:max-w-[21.8rem]",
         "h-[2.6rem] xl:h-[2.83rem] 2xl:h-[3.78rem]" // Dock size
       )}
