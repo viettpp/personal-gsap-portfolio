@@ -11,6 +11,18 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
 }
 
 const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
+// Add more tabs as needed
+// Ensure the number of tabs matches the number of links
+
+// Add a links array for external URLs (must match tabs order)
+const links = [
+  "https://story.viet.dk", // STORY link
+  "https://chat.viet.dk",  // CHAT link
+  "https://book.viet.dk",  // BOOK link
+  "https://shop.viet.dk",  // SHOP link
+  // Add more links as needed
+  // Ensure the number of links matches the number of tabs
+];
 
 // Custom hook for slot machine animation for dock tabs (now animates both layers)
 function useDockSlotMachine(
@@ -50,7 +62,7 @@ export default function NavigationDock() {
   const [activeTab, setActiveTab] = useState("STORY")
   const [hoveredTab, setHoveredTab] = useState<string | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const tabRefs = useRef<Record<string, HTMLAnchorElement | null>>({})
   const highlightRef = useRef<HTMLDivElement>(null)
   const dockInnerRef = useRef<HTMLDivElement>(null)
   const dockRef = useRef<HTMLDivElement>(null) // Add ref for the dock
@@ -188,14 +200,15 @@ export default function NavigationDock() {
             const chars = tab.split("");
 
             return (
-              <button
+              <a
                 key={tab}
-                ref={(el) => {
-                  tabRefs.current[tab] = el
-                }}
+                href={links[i]}
+                target="_blank"
+                rel="noopener noreferrer"
+                ref={el => { tabRefs.current[tab] = el }}
                 className={cn(
                   "rounded-md font-medium transition-colors duration-200 flex-1",
-                  "w-full h-full", // Make button fill its flex space
+                  "w-full h-full",
                   "px-2 xl:px-[0.55rem] 2xl:px-[0.73rem]",
                   "text-[0.688rem] xl:text-[0.75rem] 2xl:text-[1rem]",
                   "whitespace-nowrap",
@@ -204,7 +217,6 @@ export default function NavigationDock() {
                   isActive ? "text-white" : "text-white/90",
                 )}
                 style={{ fontFamily: "'PP Neue Montreal Medium', sans-serif" }}
-                onClick={() => handleTabClick(tab)}
                 onMouseEnter={() => setHoveredTab(tab)}
                 onMouseLeave={() => setHoveredTab(null)}
               >
@@ -269,7 +281,7 @@ export default function NavigationDock() {
                     </span>
                   ))}
                 </span>
-              </button>
+              </a>
             );
           })}
         </div>
