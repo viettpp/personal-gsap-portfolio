@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+// Add GSAP import
+import { gsap } from "@/lib/animations";
 
 // Utility function for className merging
 const cn = (...classes: (string | boolean | undefined)[]) => {
@@ -16,6 +18,7 @@ export default function NavigationDock() {
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
   const highlightRef = useRef<HTMLDivElement>(null)
   const dockInnerRef = useRef<HTMLDivElement>(null)
+  const dockRef = useRef<HTMLDivElement>(null) // Add ref for the dock
 
   const currentTab = hoveredTab || activeTab
 
@@ -49,6 +52,28 @@ export default function NavigationDock() {
     }
   }, [currentTab])
 
+  // Set initial position off-screen (down)
+  useEffect(() => {
+    if (dockRef.current) {
+      gsap.set(dockRef.current, { y: 100, opacity: 0 })
+    }
+    // Animate up when hero animation finishes
+    const onHeroFinished = () => {
+      if (dockRef.current) {
+        gsap.to(dockRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          ease: "power4.out",
+        })
+      }
+    }
+    window.addEventListener("heroAnimationFinished", onHeroFinished)
+    return () => {
+      window.removeEventListener("heroAnimationFinished", onHeroFinished)
+    }
+  }, [])
+
   const handleDockMouseLeave = () => {
     setHoveredTab(null)
   }
@@ -63,6 +88,7 @@ export default function NavigationDock() {
 
   return (
     <div
+      ref={dockRef} // Attach ref here
       className={cn(
         "fixed bottom-[3rem] left-1/2 -translate-x-1/2 flex items-center justify-center rounded-md shadow-lg overflow-hidden z-[100]",
         "backdrop-blur-md bg-white/20", // Frosted glass effect and bottom class to control space to the bottom of the screen
