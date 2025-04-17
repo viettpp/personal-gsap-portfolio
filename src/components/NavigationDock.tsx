@@ -16,7 +16,7 @@ const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
 
 // Add a links array for external URLs (must match tabs order)
 const links = [
-  "https://story.viet.dk", // STORY link
+  "", // STORY link is now empty, so it does nothing
   "https://chat.viet.dk",  // CHAT link
   "https://calendly.com/viettppham/60min",  // BOOK link
   "https://shop.viet.dk",  // SHOP link
@@ -202,9 +202,9 @@ export default function NavigationDock() {
             return (
               <a
                 key={tab}
-                href={links[i]}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={links[i] || undefined} // If empty string, no href attribute
+                target={links[i] ? "_blank" : undefined}
+                rel={links[i] ? "noopener noreferrer" : undefined}
                 ref={el => { tabRefs.current[tab] = el }}
                 className={cn(
                   "rounded-md font-medium transition-colors duration-200 flex-1",
