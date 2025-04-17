@@ -1,28 +1,21 @@
 "use client"; // Required for using hooks or React state in the App Router
 
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect } from "react";
 import gsap from "gsap";
 import "@/styles/Hero.css"; // Keep a single CSS file for all hero styles
 import Image from 'next/image';
 
 const Hero: FC = () => {
-  const curtainRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
         // Dispatch custom event when Hero's animation is finished
-        window.dispatchEvent(new Event("heroAnimationFinished"));
+        // Remove: window.dispatchEvent(new Event("heroAnimationFinished"));
       },
     });
 
-    tl.to(curtainRefs.current, {
-      y: "-100%",
-      duration: 1.2,
-      ease: "power4.inOut",
-      stagger: 0.15,
-    })
-    .to(".gen-line", {
+    // Start with line animation
+    tl.to(".gen-line", {
       clipPath: "inset(0 0% 0 0)", // Reveal from left to right
       duration: 0.5,
       ease: "power2.out",
@@ -36,19 +29,6 @@ const Hero: FC = () => {
 
   return (
     <section id="hero" className="relative bg-[#054D95] h-screen hero overflow-hidden">
-      {/* Curtains */}
-      <div className="hero-curtains">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            ref={(el) => {
-              if (el) curtainRefs.current[i] = el;
-            }}
-            className="hero-curtain"
-          />
-        ))}
-      </div>
-
       {/* Hero Text */}
       <h1 className="hero-text text-[3.75rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[8rem] 2xl:text-[11rem] leading-[0.9] md:leading-[0.85] lg:leading-[0.85] xl:leading-[0.8] 2xl:leading-[0.8]">
         {/* Desktop layout */}
