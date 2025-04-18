@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
           <div className="flex items-center justify-center py-4">
             <div className="contact__marquee" ref={marqueeRef}>
               <div className="contact__marquee-content">
-                <a href="mailto:hello@viet.dk" className="block">
+                <a href="https://calendly.com/viettppham/60min" className="block">
                   <span className="contact__marquee-text text-[4rem] md:text-[8rem] lg:text-[12.5rem] xl:text-[12.5rem] 2xl:text-[15rem]">
                     LET&rsquo;S TALK <span className="kelsi">X</span>&nbsp;
                   </span>

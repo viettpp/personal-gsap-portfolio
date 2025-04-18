@@ -9,7 +9,7 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
   return classes.filter(Boolean).join(" ")
 }
 
-const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
+const tabs = ["STORY", "CHAT", "TOOLS", "SHOP"]
 // Add more tabs as needed
 // Ensure the number of tabs matches the number of links
 
@@ -17,7 +17,7 @@ const tabs = ["STORY", "CHAT", "BOOK", "SHOP"]
 const links = [
   "", // STORY link is now empty, so it does nothing
   "https://chat.viet.dk",  // CHAT link
-  "https://calendly.com/viettppham/60min",  // BOOK link
+  "https://tools.viet.dk",  // TOOLS link
   "https://shop.viet.dk",  // SHOP link
   // Add more links as needed
   // Ensure the number of links matches the number of tabs
