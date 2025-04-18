@@ -59,7 +59,12 @@ const Contact: React.FC = () => {
           <div className="flex items-center justify-center py-4">
             <div className="contact__marquee" ref={marqueeRef}>
               <div className="contact__marquee-content">
-                <a href="https://calendly.com/viettppham/60min" className="block">
+                <a 
+                  href="https://calendly.com/viettppham/60min" 
+                  className="block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <span className="contact__marquee-text text-[4rem] md:text-[8rem] lg:text-[12.5rem] xl:text-[12.5rem] 2xl:text-[15rem]">
                     LET&rsquo;S TALK <span className="kelsi">X</span>&nbsp;
                   </span>
@@ -82,4 +87,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
