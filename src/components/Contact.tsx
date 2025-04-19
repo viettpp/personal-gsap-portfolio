@@ -21,8 +21,7 @@ const Contact: React.FC = () => {
   const socialLinks = [
     { text: 'LINKEDIN', href: 'https://linkedin.com/in/viettppham' },
     { text: 'GITHUB', href: 'https://github.com/viettpp' },
-    { text: 'YOUTUBE', href: 'https://www.youtube.com/@viettpp' },
-    { text: 'INSTAGRAM', href: 'https://www.instagram.com/heyimveo/' },
+    { text: 'BLUESKY', href: 'https://bsky.app/profile/viet.dk' },
   ];
 
   return (
