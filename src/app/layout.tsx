@@ -14,8 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Viet Pham",
-  description: "Inspiring the next gen of tech leaders",
+  title: "Viet Pham – Digital Storyteller & Tech Entrepreneur",
+  description: "Viet Pham blends creativity and technology to shape impactful digital experiences for the next generation.",
+  authors: [{ name: "Viet Pham" }],
+  openGraph: {
+    title: "Viet Pham – Digital Storyteller & Tech Entrepreneur",
+    description: "Shaping impactful digital experiences at the intersection of creativity, business, and technology.",
+    url: "https://viet.dk",
+    siteName: "Viet Pham",
+    images: [
+      {
+        url: "https://viet.dk/media/og-image.png",
+        width: 1200,
+        height: 644,
+        alt: "From Ideas to Impact Build Your Future with Viet Pham",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  }
 };
 
 // Move themeColor to the viewport export
