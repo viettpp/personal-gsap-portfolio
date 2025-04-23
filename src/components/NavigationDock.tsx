@@ -15,12 +15,13 @@ const tabs = ["STORY", "CHAT", "TOOLS", "SHOP"]
 
 // Add a links array for external URLs (must match tabs order)
 const links = [
-  "", // STORY link is now empty, so it does nothing
-  "https://chat.viet.dk",  // CHAT link
-  "https://tools.viet.dk",  // TOOLS link
-  "https://shop.viet.dk",  // SHOP link
+  "", // STORY link
+  "",  // CHAT link
+  "",  // TOOLS link
+  "",  // SHOP link
   // Add more links as needed
   // Ensure the number of links matches the number of tabs
+  // Uncomment NavigationDock in page.tsx to use
 ];
 
 // Custom hook for slot machine animation for dock tabs (now animates both layers)

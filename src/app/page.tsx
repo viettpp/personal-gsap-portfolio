@@ -15,7 +15,7 @@ const Home = () => {
         <Services />
         <Contact />
       </main>
-      <NavigationDock />
+      {/* <NavigationDock /> *//* Uncomment this line to enable the Navigation Dock */}
     </>
   )
 }
