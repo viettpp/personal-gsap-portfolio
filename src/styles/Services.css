@@ -1,0 +1,84 @@
+/* Container Styles */
+.core-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Left Section */
+.core-services__left {
+    flex: 1;
+}
+
+/* Core Services Title */  
+.title {
+    font-family: 'Bueno', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+}
+
+/* For the letter 'e' in Services */
+.title .kelsi {
+    font-family: 'Kelsi-Regular', sans-serif;
+    position: relative;
+}
+
+/* Text styles */
+.description, .services-table {
+    font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.resume-link {
+    font-family: 'PP Neue Montreal Medium', sans-serif;
+}
+
+/* Right Section */
+.core-services__right {
+    flex: 1;
+}
+
+/* Table Styles */
+.services-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.category-cell {
+    font-family: 'PP Neue Montreal Medium', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    vertical-align: top;
+}
+
+.number-cell {
+    position: relative;
+    font-family: 'PP Neue Montreal Medium', sans-serif;
+    color: #fff;
+    text-align: left;
+    vertical-align: top;
+}
+
+.number-cell .text-wrapper,
+.item-cell .text-wrapper {
+    /* Use percentage values for clip-path for smoother animation */
+    clip-path: inset(0% 0% 100% 0%);
+    overflow: hidden; /* ensure content is clipped */
+    transform: translateY(20px); /* shift down initially */
+    will-change: clip-path, transform;
+}
+
+.item-cell {
+    color: #fff;
+    position: relative;
+}
+
+.top-line {
+    position: absolute;
+    bottom: 0; /* or a small offset if you want the line slightly above the bottom */
+    left: -20px; /* shift left to start near the num cell's left edge */
+    width: calc(100% + 20px); /* extend the line to the right edge of item cell */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}

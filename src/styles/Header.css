@@ -1,0 +1,28 @@
+/* Logo Container */
+.logo-container {
+    position: absolute; /* You can also change to 'sticky' */
+    top: 0; /* Stick to the top */
+    background-color: #054D95; /* Matches the background */
+    z-index: 10; /* Keeps it above other elements */
+    width: 100%; /* Ensure it spans the full width */
+    text-align: center; /* Center align the content */
+  }
+  
+ /* Logo Text */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+/* Kelsi-fill Font for "V" */
+  .kelsi {
+    font-family: 'Kelsi-fill', sans-serif;
+    color: #fff;
+}
+  
+/* Redacted Script Font for "iet" */
+  .redacted {
+    font-family: 'Redacted Script', cursive;
+    color: #fff;
+}

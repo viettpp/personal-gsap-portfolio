@@ -1,0 +1,101 @@
+/* Hero Section */
+#hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack content vertically */
+  text-align: center;
+  height: 100vh;
+  padding-top: 1rem; /* Adjusted padding for header */
+  overflow: hidden; /* Ensure curtains cover everything initially */
+}
+
+/* Curtains */
+.hero-curtains {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 100; /* Ensure curtains are above everything */
+}
+.hero-curtain {
+  height: 100%;
+  width: 20%;
+  background: #043D77;
+}
+
+/* Hero Text */
+.hero-text {
+  font-family: 'Bueno', sans-serif; /* Default font is Bueno */
+  font-weight: 100;
+  text-transform: uppercase; /* Force uppercase */
+  color: #fff; /* White color */
+  margin: 0;
+  /*line-height: 0.5; /* Adjusted line-height to fit the image dimensions */
+  position: relative; /* Ensure proper positioning */
+  z-index: 10; /* Ensure text appears above the hero section */
+}
+
+/* Kelsi Container */
+.hero .kelsi-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible; /* Ensure the container does not clip its children */
+}
+
+/* Kelsi Text */
+.hero .kelsi-text {
+  font-family: 'Kelsi-Regular', sans-serif; /* Apply Kelsi to specific characters */
+  display: inline-block;
+  color: #fff;
+  margin: 0 -0.15em;
+  /*line-height: 1.0; /* Ensure it aligns with the rest */
+  letter-spacing: 0; /* 0% letter spacing for Kelsi */
+  z-index: 2; /* Ensure it is above the Bueno text */
+}
+
+/* Kelsi */
+.hero .kelsi {
+  font-family: 'Kelsi-fill', sans-serif; /* Apply Kelsi to specific characters */
+  display: inline-block;
+  color: #054D95; /* White color */
+  margin: 0 -0.15em;
+  /*line-height: 1.0; /* Ensure it aligns with the rest */
+  letter-spacing: 0; /* 0% letter spacing for Kelsi */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure it is below the .kelsi-text */
+}
+
+/* Line SVG */
+.line-svg {
+  position: absolute;
+  left: -100%;           /* Extend the line beyond the container */
+  max-width: none;       /* Keep no max-width constraint */
+  height: auto;
+}
+
+/* Gen Line */
+.gen-line {
+  clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+  will-change: clip-path; /* Optimize animation performance */
+}
+
+/* Tech Line */
+.tech-line {
+  clip-path: inset(0 100% 0 0); /* Hide the entire width from right to left */
+  will-change: clip-path; /* Optimize animation performance */
+}
+
+/* Shared styles for SVGs */
+.svg-fixed {
+  position: fixed;
+  z-index: 20; /* Ensures visibility over other elements */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure no overlapping with scrolling content */
+#hero.hero {
+  position: relative;
+}

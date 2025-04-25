@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #054D95;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #054D95;
     --foreground: #ededed;
   }
 }
@@ -18,4 +18,30 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Local Fonts */
+@font-face {
+  font-family: 'Kelsi-regular';
+  src: url('/fonts/Kelsi-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Kelsi-fill';
+  src: url('/fonts/Kelsi-fill.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Bueno';
+  src: url('/fonts/Bueno-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal Medium';
+  src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
 }

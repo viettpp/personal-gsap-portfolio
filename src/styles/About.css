@@ -1,0 +1,14 @@
+/* styles/About.css */
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.about-text {
+    font-family: "PP Neue Montreal", sans-serif;
+    text-align: left;
+    color: white;
+    line-height: 1.2;
+}
