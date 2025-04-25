@@ -21,7 +21,6 @@ const links = [
   "",  // SHOP link
   // Add more links as needed
   // Ensure the number of links matches the number of tabs
-  // Uncomment NavigationDock in page.tsx to use
 ];
 
 // Custom hook for slot machine animation for dock tabs (now animates both layers)

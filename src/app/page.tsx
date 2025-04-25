@@ -3,7 +3,7 @@ import Hero from "@/components/Hero"
 import About from "@/components/About"
 import Services from "@/components/Services"
 import Contact from "@/components/Contact"
-{/* import NavigationDock from "@/components/NavigationDock" */} // Uncomment this line to enable the Navigation Dock
+import NavigationDock from "@/components/NavigationDock"
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         <Services />
         <Contact />
       </main>
-      {/* <NavigationDock /> *//* Uncomment this line to enable the Navigation Dock */}
+      <NavigationDock />
     </>
   )
 }
