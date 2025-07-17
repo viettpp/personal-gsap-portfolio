@@ -9,14 +9,14 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
   return classes.filter(Boolean).join(" ")
 }
 
-const tabs = ["STORY", "CHAT", "TOOLS", "SHOP"]
+const tabs = ["STORY", "CHAT"]
 // Add more tabs as needed
 // Ensure the number of tabs matches the number of links
 
 // Add a links array for external URLs (must match tabs order)
 const links = [
   "", // STORY link
-  "",  // CHAT link
+  "https://chat.viet.dk",  // CHAT link
   "",  // TOOLS link
   "",  // SHOP link
   // Add more links as needed
@@ -214,8 +214,7 @@ export default function NavigationDock() {
               <a
                 key={tab}
                 href={links[i] || undefined} // If empty string, no href attribute
-                target={links[i] ? "_blank" : undefined}
-                rel={links[i] ? "noopener noreferrer" : undefined}
+                // Removed target and rel so links open in the same tab
                 ref={el => { tabRefs.current[tab] = el }}
                 className={cn(
                   "rounded-md font-medium transition-colors duration-200 flex-1",
