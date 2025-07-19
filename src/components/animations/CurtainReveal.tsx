@@ -28,7 +28,7 @@ export default function CurtainReveal() {
             key={i}
             ref={el => { if (el) curtainRefs.current[i] = el; }}
             className="hero-curtain"
-            style={{ height: "100%", width: "20%", background: "#043D77" }}
+            style={{ height: "100%", width: "20%", background: "#121216" }}
           />
         ))}
       </div>

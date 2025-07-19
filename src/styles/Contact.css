@@ -1,6 +1,6 @@
 .contact {
-  background-color: #021F3B;
-  color: #9BA5D4;
+  background-color: #12100E;
+  color: #71717a;
   height: 625px;
   overflow: hidden;
 }
@@ -49,7 +49,7 @@
 }
 
 .contact__connect {
-  color: #4656A5;
+  color: #fff;
   font-family: 'PP Neue Montreal Medium', sans-serif;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .contact__marquee .kelsi {
-  color: #9BA5D4;
+  color: #71717a;
   font-family: 'Kelsi-Regular', sans-serif;
   display: inline-block;
   position: relative;

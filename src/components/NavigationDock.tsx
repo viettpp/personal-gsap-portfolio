@@ -196,7 +196,7 @@ export default function NavigationDock() {
         <div
           ref={highlightRef}
           className={cn(
-            "absolute bg-[#043D77] rounded z-0 transition-all duration-300 ease-out pointer-events-none",
+            "absolute bg-[#fff] rounded z-0 transition-all duration-300 ease-out pointer-events-none",
             isLoaded ? "opacity-100" : "opacity-0",
           )}
         />
@@ -224,7 +224,7 @@ export default function NavigationDock() {
                   "whitespace-nowrap",
                   "font-[PP Neue Montreal Medium]",
                   "flex items-center justify-center",
-                  isActive ? "text-white" : "text-white/90",
+                  isActive ? "text-black" : "text-white/90",
                 )}
                 style={{ fontFamily: "'PP Neue Montreal Medium', sans-serif" }}
                 onMouseEnter={() => setHoveredTab(tab)}

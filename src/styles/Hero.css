@@ -21,7 +21,7 @@
 .hero-curtain {
   height: 100%;
   width: 20%;
-  background: #043D77;
+  background: #121216;
 }
 
 /* Hero Text */
@@ -58,7 +58,7 @@
 .hero .kelsi {
   font-family: 'Kelsi-fill', sans-serif; /* Apply Kelsi to specific characters */
   display: inline-block;
-  color: #054D95; /* White color */
+  color: #09090B; /* White color */
   margin: 0 -0.15em;
   /*line-height: 1.0; /* Ensure it aligns with the rest */
   letter-spacing: 0; /* 0% letter spacing for Kelsi */

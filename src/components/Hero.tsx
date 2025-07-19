@@ -35,7 +35,7 @@ const Hero: FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative bg-[#054D95] h-screen hero overflow-hidden">
+    <section id="hero" className="relative bg-[#09090B] h-screen hero overflow-hidden">
       {/* Hero Text */}
       <h1 className="hero-text text-[3.75rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[8rem] 2xl:text-[11rem] leading-[0.9] md:leading-[0.85] lg:leading-[0.85] xl:leading-[0.8] 2xl:leading-[0.8]">
         {/* Desktop layout */}
