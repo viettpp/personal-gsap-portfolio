@@ -9,19 +9,18 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
   return classes.filter(Boolean).join(" ")
 }
 
-const tabs = ["STORY", "CHAT", "TOOLS", "SHOP"]
+const tabs = ["STORY", "CHAT"]
 // Add more tabs as needed
 // Ensure the number of tabs matches the number of links
 
 // Add a links array for external URLs (must match tabs order)
 const links = [
   "", // STORY link
-  "",  // CHAT link
+  "https://chat.viet.dk",  // CHAT link
   "",  // TOOLS link
   "",  // SHOP link
   // Add more links as needed
   // Ensure the number of links matches the number of tabs
-  // Uncomment NavigationDock in page.tsx to use
 ];
 
 // Custom hook for slot machine animation for dock tabs (now animates both layers)
@@ -179,7 +178,7 @@ export default function NavigationDock() {
       ref={dockRef} // Attach ref here
       className={cn(
         "fixed bottom-[3rem] left-1/2 -translate-x-1/2 flex items-center justify-center rounded-md shadow-lg overflow-hidden z-[100]",
-        "backdrop-blur-md bg-white/20", // Frosted glass effect and bottom class to control space to the bottom of the screen
+        "backdrop-blur-md bg-[#A4A4A418]", // Frosted glass effect and bottom class to control space to the bottom of the screen
         "w-[80vw] max-w-[15rem] xl:max-w-[16.35rem] 2xl:max-w-[21.8rem]",
         "h-[2.6rem] xl:h-[2.83rem] 2xl:h-[3.78rem]" // Dock size
       )}
@@ -215,8 +214,7 @@ export default function NavigationDock() {
               <a
                 key={tab}
                 href={links[i] || undefined} // If empty string, no href attribute
-                target={links[i] ? "_blank" : undefined}
-                rel={links[i] ? "noopener noreferrer" : undefined}
+                // Removed target and rel so links open in the same tab
                 ref={el => { tabRefs.current[tab] = el }}
                 className={cn(
                   "rounded-md font-medium transition-colors duration-200 flex-1",
