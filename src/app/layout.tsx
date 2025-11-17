@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Viet Pham – Digital Storyteller & Tech Entrepreneur",
+  title: "VIET – Digital Storyteller & Tech Entrepreneur",
   description: "Viet Pham blends creativity and technology to shape impactful digital experiences for the next generation.",
   authors: [{ name: "Viet Pham" }],
   openGraph: {
-    title: "Viet Pham – Digital Storyteller & Tech Entrepreneur",
+    title: "VIET – Digital Storyteller & Tech Entrepreneur",
     description: "Shaping impactful digital experiences at the intersection of creativity, business, and technology.",
     url: "https://viet.dk",
     siteName: "Viet Pham",
