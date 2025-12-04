@@ -11,9 +11,9 @@
   "dependencies": {
     "@fontsource/redacted-script": "^5.1.1",
     "gsap": "^3.12.7",
-    "next": "^15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "^16.0.7",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
