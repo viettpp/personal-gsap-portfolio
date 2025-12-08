@@ -14,30 +14,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VIET – Digital Storyteller & Tech Entrepreneur",
-  description: "Viet Pham blends creativity and technology to shape impactful digital experiences for the next generation.",
+  title: "VIET",
+  description:
+    "Viet Pham blends creativity and technology to shape impactful digital experiences for the next generation.",
   authors: [{ name: "Viet Pham" }],
   openGraph: {
-    title: "VIET – Digital Storyteller & Tech Entrepreneur",
-    description: "Shaping impactful digital experiences at the intersection of creativity, business, and technology.",
-    url: "https://viet.dk",
-    siteName: "Viet Pham",
+    title: "VIET",
+    description:
+      "Shaping impactful digital experiences at the intersection of creativity, business, and technology.",
+    url: "https://about.viet.dk",
+    siteName: "VIET",
     images: [
       {
-        url: "https://viet.dk/media/og-image.png",
+        url: "https://about.viet.dk/media/og-image.png",
         width: 1200,
         height: 644,
-        alt: "From Ideas to Impact Build Your Future with Viet Pham",
+        alt: "VIET Technology Leader",
       },
     ],
     locale: "en_US",
     type: "website",
-  }
+  },
 };
 
-// Move themeColor to the viewport export
 export const viewport = {
-  themeColor: "#054D95", // Your background color
+  themeColor: "#054D95",
 };
 
 export default function RootLayout({
@@ -48,7 +49,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Add this meta tag for Safari */}
         <meta name="theme-color" content="#054D95" />
       </head>
       <body
