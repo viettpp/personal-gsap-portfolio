@@ -16,7 +16,7 @@ const tabs = ["STORY", "CHAT"]
 // Add a links array for external URLs (must match tabs order)
 const links = [
   "", // STORY link
-  "https://chat.viet.dk",  // CHAT link
+  "https://viet.dk",  // CHAT link
   "",  // TOOLS link
   "",  // SHOP link
   // Add more links as needed

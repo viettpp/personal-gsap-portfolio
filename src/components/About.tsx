@@ -39,12 +39,12 @@ const About: FC = () => {
   return (
     <section className="about-section max-w-[20rem] md:max-w-[40rem] lg:max-w-[50rem] xl:max-w-[70rem] 2xl:max-w-[120rem] pb-[5rem] md:pb-[8rem] lg:pb-[10rem] xl:pb-[12rem] 2xl:pb-[15rem] mx-auto">
       <p className="about-text text-[1.8rem] md:text-[2.25rem] lg:text-[3.5rem] xl:text-[3.5rem] 2xl:text-[5rem] indent-[4rem] md:indent-[8rem] lg:indent-[10rem] xl:indent-[12rem] 2xl:indent-[24rem]">
-        Viet is a digital storyteller and seasoned tech entrepreneur, uniquely
+        VIET is a digital storyteller and seasoned tech entrepreneur, uniquely
         situated at the nexus of business, technology, and creativity. With a
         strong consultancy background and a flair for experimentation, he
         transforms abstract ideas into impactful digital realities. Each line
         of code, pixel, and frame stands as a testament to his passion for
-        innovation and excellence.
+        innovation and excellence, the same passion that shaped MARK.
       </p>
     </section>
   );
