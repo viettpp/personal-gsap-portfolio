@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/redacted-script": "^5.1.1",
+    "@vercel/analytics": "^1.6.1",
     "gsap": "^3.12.7",
     "next": "^16.0.7",
     "react": "^19.0.1",
