@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "https://about.viet.dk/media/og-image.png",
         width: 1200,
         height: 644,
-        alt: "About Viet Pham",
+        alt: "VIET Technology Leader",
       },
     ],
     locale: "en_US",
