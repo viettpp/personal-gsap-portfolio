@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-start pt-[5rem] md:pt-[8rem] lg:pt-[10rem] xl:pt-[12rem] 2xl:pt-[15rem] px-[3rem] lg:px-[5rem] xl:px-[6rem] 2xl:px-[8rem]">
             {/* Left Text */}
             <p className="contact__description text-[1.25rem] md:text-[1.375rem] lg:text-[1.625rem] xl:text-[1.75rem] 2xl:text-[2.375rem] max-w-[18rem] md:max-w-[23rem] lg:max-w-[27rem] xl:max-w-[30rem] 2xl:max-w-[40rem] mb-[1.5rem] md:mb-0">
-              Fusing experimentation with execution, Viet builds digital products that shift perception and drive progress.
+              Fusing experimentation with execution, VIET builds digital products that shift perception and drive progress.
             </p>
 
             {/* Right Links */}

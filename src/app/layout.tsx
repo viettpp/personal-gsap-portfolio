@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "VIET",
   description:
-    "Viet Pham blends creativity and technology to shape impactful digital experiences for the next generation.",
+    "VIET blends creativity and technology to shape impactful digital experiences for the next generation.",
   authors: [{ name: "Viet Pham" }],
   openGraph: {
     title: "VIET",
