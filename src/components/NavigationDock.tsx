@@ -158,8 +158,8 @@ export default function NavigationDock() {
         gsap.to(dockRef.current, {
           y: 0,
           opacity: 1,
-          duration: 1.1,
-          ease: "power4.out",
+          duration: 1.5,
+          ease: "power2.out",
         })
       }
     }

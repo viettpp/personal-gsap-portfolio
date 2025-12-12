@@ -2,10 +2,13 @@
 .logo-container {
     position: absolute; /* You can also change to 'sticky' */
     top: 0; /* Stick to the top */
-    background-color: #054D95; /* Matches the background */
+    background-color: transparent; /* Let the hero background show through for a seamless edge */
     z-index: 10; /* Keeps it above other elements */
     width: 100%; /* Ensure it spans the full width */
     text-align: center; /* Center align the content */
+    transform: translateY(-100%); /* Start off-screen to avoid flash */
+    will-change: transform;
+    opacity: 0;
   }
   
  /* Logo Text */
